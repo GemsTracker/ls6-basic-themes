@@ -54,11 +54,100 @@
         } %}
 {% endif %}
 
-{# First settings row#}
 <div class='row action_hide_on_inherit'>
-    {# Show each group as a tab #}
+    <h3>GT Theme options</h3>
+    {# First settings row#}
     <div class='row'>
-        <h3>GT Theme options</h3>
+        {# Autonsave options #}
+        <div class='col-sm-12 col-md-4 col-lg-3'>
+            <div class='form-group row'>
+                <label for='simple_edit_options_autoSave' class='control-label'>{{ translations.autoSave_label }}</label>
+                <div class='col-sm-12'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name='autoSave' type='radio' value='1minute' class='selector_option_radio_field ' data-id='autoSave'/>
+                            {{ translations.autoSave_1minute }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='autoSave' type='radio' value='blur' class='selector_option_radio_field ' data-id='autoSave'/>
+                            {{ translations.autoSave_blur }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='autoSave' type='radio' value='none' class='selector_option_radio_field ' data-id='autoSave'/>
+                            {{ translations.autoSave_no }}
+                        </label>
+
+                        {# If this is a root template stting, don't show the inherit button #}
+                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
+                            <label class="btn btn-default">
+                                <input type='radio' name='autoSave' value='inherit' class='selector_option_radio_field simple_edit_options_autoSave' data-id='autoSave'/>
+                                {{ gT("Inherit") }}
+                            </label>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Set Yes No to radio button #}
+        <div class='col-sm-12 col-md-4 col-lg-3'>
+            <div class='form-group row'>
+                <label for='simple_edit_options_yesNoShowButtons' class='control-label'>{{ translations.yesNoShow_label }}</label>
+                <div class='col-sm-12'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name='yesNoShowButtons' type='radio' value='on' class='selector_option_radio_field ' data-id='yesNoShowButtons'/>
+                            {{ translations.yesNoShow_yes }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='yesNoShowButtons' type='radio' value='off' class='selector_option_radio_field ' data-id='yesNoShowButtons'/>
+                            {{ translations.yesNoShow_no }}
+                        </label>
+
+                        {# If this is a root template stting, don't show the inherit button #}
+                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
+                            <label class="btn btn-default">
+                                <input type='radio' name='groupsAsTabs' value='inherit' class='selector_option_radio_field simple_edit_options_yesNoShowButtons' data-id='yesNoShowButtons'/>
+                                {{ gT("Inherit") }}
+                            </label>
+                        {% endif %}
+                    </div>
+                    <br/><em>{{ translations.yesNoShow_descr }}</em>
+                </div>
+            </div>
+        </div>
+
+        {# Show groups as tab - for all for one page survey #}
+        <div class='col-sm-12 col-md-4 col-lg-3'>
+            <div class='form-group row'>
+                <label for='simple_edit_options_groupsAsTabs' class='control-label'>{{ translations.groupsAsTabs_label }}</label>
+                <div class='col-sm-12'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name='groupsAsTabs' type='radio' value='on' class='selector_option_radio_field ' data-id='groupsAsTabs'/>
+                            {{ gT("Yes") }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='groupsAsTabs' type='radio' value='off' class='selector_option_radio_field ' data-id='groupsAsTabs'/>
+                            {{ gT("No") }}
+                        </label>
+                        
+                        {# If this is a root template stting, don't show the inherit button #}
+                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
+                            <label class="btn btn-default">
+                                <input type='radio' name='groupsAsTabs' value='inherit' class='selector_option_radio_field simple_edit_options_groupsAsTabs' data-id='groupsAsTabs'/>
+                                {{ gT("Inherit") }}
+                            </label>
+                        {% endif %}
+                    </div>
+                    <br/><em>{{ translations.groupsAsTabs_descr }}</em>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Second settings row#}
+    <div class='row'>
         {# Hide question tips until icon clicked info #}
         <div class='col-sm-12 col-md-4 col-lg-3'>
             <div class='form-group row'>
@@ -105,7 +194,7 @@
                             <input name='hideClickHelp' type='radio' value='off' class='selector_option_radio_field ' data-id='hideClickHelp'/>
                             {{ translations.hideHelp_no }}
                         </label>
-    
+
                         {# If this is a root template stting, don't show the inherit button #}
                         {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
                             <label class="btn btn-default">
@@ -118,7 +207,7 @@
                 </div>
             </div>
         </div>
-    
+
         {# Hide answer options starting with -/- #}
         <div class='col-sm-12 col-md-4 col-lg-3'>
             <div class='form-group row'>
@@ -133,7 +222,7 @@
                             <input name='hideMarkedOptions' type='radio' value='off' class='selector_option_radio_field ' data-id='hideMarkedOptions'/>
                             {{ gT("Show") }}
                         </label>
-    
+
                         {# If this is a root template stting, don't show the inherit button #}
                         {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
                             <label class="btn btn-default">
@@ -143,97 +232,6 @@
                         {% endif %}
                     </div>
                     <br/><em>{{ translations.hideMarked_descr }}</em>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class='row'>
-        {# Show groups as tab - for all for one page survey #}
-        <div class='col-sm-12 col-md-4 col-lg-3'>
-
-            <div class='form-group row'>
-                <label for='simple_edit_options_yesNoShowButtons' class='control-label'>{{ translations.yesNoShow_label }}</label>
-                <div class='col-sm-12'>
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-default">
-                            <input name='yesNoShowButtons' type='radio' value='on' class='selector_option_radio_field ' data-id='yesNoShowButtons'/>
-                            {{ translations.yesNoShow_yes }}
-                        </label>
-                        <label class="btn btn-default">
-                            <input name='yesNoShowButtons' type='radio' value='off' class='selector_option_radio_field ' data-id='yesNoShowButtons'/>
-                            {{ translations.yesNoShow_no }}
-                        </label>
-
-                        {# If this is a root template stting, don't show the inherit button #}
-                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
-                            <label class="btn btn-default">
-                                <input type='radio' name='groupsAsTabs' value='inherit' class='selector_option_radio_field simple_edit_options_yesNoShowButtons' data-id='yesNoShowButtons'/>
-                                {{ gT("Inherit") }}
-                            </label>
-                        {% endif %}
-                    </div>
-                    <br/><em>{{ translations.yesNoShow_descr }}</em>
-                </div>
-            </div>
-        </div>
-
-        {# Show groups as tab - for all for one page survey #}
-        <div class='col-sm-12 col-md-4 col-lg-3'>
-    
-            <div class='form-group row'>
-                <label for='simple_edit_options_groupsAsTabs' class='control-label'>{{ translations.groupsAsTabs_label }}</label>
-                <div class='col-sm-12'>
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-default">
-                            <input name='groupsAsTabs' type='radio' value='on' class='selector_option_radio_field ' data-id='groupsAsTabs'/>
-                            {{ gT("Yes") }}
-                        </label>
-                        <label class="btn btn-default">
-                            <input name='groupsAsTabs' type='radio' value='off' class='selector_option_radio_field ' data-id='groupsAsTabs'/>
-                            {{ gT("No") }}
-                        </label>
-                        
-                        {# If this is a root template stting, don't show the inherit button #}
-                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
-                            <label class="btn btn-default">
-                                <input type='radio' name='groupsAsTabs' value='inherit' class='selector_option_radio_field simple_edit_options_groupsAsTabs' data-id='groupsAsTabs'/>
-                                {{ gT("Inherit") }}
-                            </label>
-                        {% endif %}
-                    </div>
-                    <br/><em>{{ translations.groupsAsTabs_descr }}</em>
-                </div>
-            </div>
-        </div>
-        
-        {# Autonsave options #}
-        <div class='col-sm-12 col-md-4 col-lg-3'>
-
-            <div class='form-group row'>
-                <label for='simple_edit_options_autoSave' class='control-label'>{{ translations.autoSave_label }}</label>
-                <div class='col-sm-12'>
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-default">
-                            <input name='autoSave' type='radio' value='1minute' class='selector_option_radio_field ' data-id='autoSave'/>
-                            {{ translations.autoSave_1minute }}
-                        </label>
-                        <label class="btn btn-default">
-                            <input name='autoSave' type='radio' value='blur' class='selector_option_radio_field ' data-id='autoSave'/>
-                            {{ translations.autoSave_blur }}
-                        </label>
-                        <label class="btn btn-default">
-                            <input name='autoSave' type='radio' value='off' class='selector_option_radio_field ' data-id='autoSave'/>
-                            {{ translations.autoSave_no }}
-                        </label>
-
-                        {# If this is a root template stting, don't show the inherit button #}
-                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
-                            <label class="btn btn-default">
-                                <input type='radio' name='autoSave' value='inherit' class='selector_option_radio_field simple_edit_options_autoSave' data-id='autoSave'/>
-                                {{ gT("Inherit") }}
-                            </label>
-                        {% endif %}
-                    </div>
                 </div>
             </div>
         </div>

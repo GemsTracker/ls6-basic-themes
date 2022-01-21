@@ -24,4 +24,23 @@ Download the .zip from the downloads map and import the theme in LimeSurvey.
 
 ## Usage
 
+
 ## Maintenance Setup
+In order to automatically update this theme when updating a GemsTracker project, include these lines in your `composer.json` file.
+- Under `"require"` add: `"gemstracker/ls3-basic-themes": "dev-main",`.
+- Under `"repositories"` add: `"{
+  "type": "git",
+  "url": "https://github.com/GemsTracker/ls3-basic-themes.git"
+  },`.
+
+The go to your LimeSurvey installation and then to the `upload/themes/survey` directory. There you create a link.
+
+On **Linux**:
+
+`ln -s gt-basic {project-dir}\vendor\gemstrack\ls3-basic-themes\src\gt-basic`
+
+On **Windows**:
+
+`mklink /J gt-basic {project-dir}\vendor\gemstrack\ls3-basic-themes\src\gt-basic`
+
+This is also very useful if you want to be able to edit the project for multiple development sites.
