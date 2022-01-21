@@ -1,0 +1,10 @@
+
+{#  Debug code: Show all the survey options  #}
+
+{#  % for key, option in aSurveyInfo %}
+    {{ key }} <br/>
+{%  endfor %}
+{#   #}
+{% for key, option in aSurveyInfo.options %}
+    {{ key }} - {{ option }} <br/>
+{%  endfor %}

@@ -1,0 +1,25 @@
+.hide-slidernumber .tooltip-main.top {
+    display: none;
+}
+
+.hide-untouched .slider-untouched .slider-handle {
+    display: none;
+}
+
+.hide-tip-click.text-info .help-content {
+    display: inline-block;
+    padding-left: 1eml;
+}
+
+.hide-tip-click.text-info .help-content div{
+    display: inline-block;
+}
+
+.hide-tip-click.text-info .help-content .fa.fa-exclamation-circle {
+    display: none;
+}
+
+.yesno-show-buttons [data-toggle=buttons] > .btn input[type=radio] {
+  position: relative;
+  pointer-events: inherit;
+}

@@ -1,0 +1,14 @@
+
+<!-- START OF GROUP: {{ aGroup.name }} {{ aGroup.gid }}  -->
+{%  if aGroup.gseq == 0 %}
+    {% set activeClass = 'active' %}
+{% else %}
+    {% set activeClass = '' %}
+{% endif %}
+<div id='group-{{ aGroup.gseq }}' role="tabpanel" class="tab-pane {{ activeClass }} {{ aSurveyInfo.class.groupoutercontainer }}{{ aGroup.class }} space-col" {{ aSurveyInfo.attr.questiongroup }}>
+
+    {# The container div itself could often change from a template to another, so we clearly separate it. #}
+    {{ include('./subviews/survey/group_subviews/group_container.twig') }}
+
+</div>
+<!-- END OF GROUP: {{ aGroup.name }} {{ aGroup.gid }}  -->

@@ -1,0 +1,244 @@
+
+{# Add your (usually inherited) theme specific options here #}
+
+{#  find the current langage #}
+{% if 'Bewaar'== gT('Save') %}
+    {%  set translations = {
+        'autoSave_label':     'Autosave',
+        'autoSave_1minute':   'Elke minuut',
+        'autoSave_blur':      'Bij tab switch',
+        'autoSave_no':        'Nooit',
+        'groupsAsTabs_label': 'Toon groepen als tabs',
+        'groupsAsTabs_descr': 'Stel het formaat onder Algemene instellingen in in op Alles ineens!',
+        'hideHelp_label':     'Verberg helptekst',
+        'hideHelp_descr':     'Verberg helptekst (onder het antwoord) tot klik op help icoon',
+        'hideHelp_yes':       'Tonen met klik',
+        'hideHelp_no':        'Altijd help tonen',
+        'hideTip_label':      'Verberg tip tekst(en)',
+        'hideTip_descr':      'Verberg tip teksten (boven het antwoord) tot klik op info icoon',
+        'hideTip_yes':        'Verberg altijd',
+        'hideTip_click':      'Tonen met klik',
+        'hideTip_no':         'Altijd tip tonen',
+        'hideMarked_label':   'Verberg -/- antwoord opties',
+        'hideMarked_descr':   'Verberg antwoord of subvraag met een label dat starte met -/-',
+        'hideMarked_yes':     'Verberg',
+        'yesNoShow_label':    'Ja Nee Vraag weergave',
+        'yesNoShow_descr':    'Voeg een selecteerbare cirkel toe aan Ja Nee Vragen zodat de geselecteerde knop duidelijk is.',
+        'yesNoShow_yes':      'Keuze cirkel',
+        'yesNoShow_no':       'Alleen een knop',
+        } %}
+{%  else %}
+    {%  set translations = {
+        'autoSave_label':     'Autosave',
+        'autoSave_1minute':   'Every minute',
+        'autoSave_blur':      'When switching tabs',
+        'autoSave_no':        'Never',
+        'groupsAsTabs_label': 'Show groups as tabs',
+        'groupsAsTabs_descr': 'Set format under General settings to All in one!',
+        'hideHelp_label':    'Hide help as icon',
+        'hideHelp_descr':    'Hide help (beneath the answers) until help icon is clicked',
+        'hideHelp_yes':      'Show on click',
+        'hideHelp_no':       'Show always',
+        'hideTip_label':     'Hide tip text(s)',
+        'hideTip_descr':     'Hide tip text(s) (above the answers) until click on info icon',
+        'hideTip_yes':       'Hide completely',
+        'hideTip_click':     'Show on click',
+        'hideTip_no':        'Always show help',
+        'hideMarked_label': 'Hide -/- answer options',
+        'hideMarked_descr': 'Hide answer or sub question when the label starts with -/-',
+        'hideMarked_yes':   'Hide',
+        'yesNoShow_label':    'Yes No Question display',
+        'yesNoShow_descr':    'Add a selectable circle to Yes No Questions to make clear which button is selected',
+        'yesNoShow_yes':      'Selectable circle',
+        'yesNoShow_no':       'Button only',
+        } %}
+{% endif %}
+
+{# First settings row#}
+<div class='row action_hide_on_inherit'>
+    {# Show each group as a tab #}
+    <div class='row'>
+        <h3>GT Theme options</h3>
+        {# Hide question tips until icon clicked info #}
+        <div class='col-sm-12 col-md-4 col-lg-3'>
+            <div class='form-group row'>
+                <label for='simple_edit_options_hideClickInfo' class='control-label'>{{ translations.hideTip_label }}</label>
+                <div class='col-sm-12'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name='hideClickInfo' type='radio' value='on' class='selector_option_radio_field ' data-id='hideClickInfo'/>
+                            {{ translations.hideTip_yes }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='hideClickInfo' type='radio' value='click' class='selector_option_radio_field ' data-id='hideClickInfo'/>
+                            {{ translations.hideTip_click }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='hideClickInfo' type='radio' value='off' class='selector_option_radio_field ' data-id='hideClickInfo'/>
+                            {{ translations.hideTip_no }}
+                        </label>
+
+                        {# If this is a root template stting, don't show the inherit button #}
+                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
+                            <label class="btn btn-default">
+                                <input type='radio' name='hideClickInfo' value='inherit' class='selector_option_radio_field simple_edit_options_hideClickInfo' data-id='hideClickInfo'/>
+                                {{ gT("Inherit") }}
+                            </label>
+                        {% endif %}
+                    </div>
+                    <br/><em>{{ translations.hideTip_descr }}</em>
+                </div>
+            </div>
+        </div>
+
+        {# Hide question help until icon clicked info #}
+        <div class='col-sm-12 col-md-4 col-lg-3'>
+            <div class='form-group row'>
+                <label for='simple_edit_options_hideClickHelp' class='control-label'>{{ translations.hideHelp_label }}</label>
+                <div class='col-sm-12'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name='hideClickHelp' type='radio' value='on' class='selector_option_radio_field ' data-id='hideClickHelp'/>
+                            {{ translations.hideHelp_yes }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='hideClickHelp' type='radio' value='off' class='selector_option_radio_field ' data-id='hideClickHelp'/>
+                            {{ translations.hideHelp_no }}
+                        </label>
+    
+                        {# If this is a root template stting, don't show the inherit button #}
+                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
+                            <label class="btn btn-default">
+                                <input type='radio' name='hideClickHelp' value='inherit' class='selector_option_radio_field simple_edit_options_hideClickHelp' data-id='hideClickHelp'/>
+                                {{ gT("Inherit") }}
+                            </label>
+                        {% endif %}
+                    </div>
+                    <br/><em>{{ translations.hideHelp_descr }}</em>
+                </div>
+            </div>
+        </div>
+    
+        {# Hide answer options starting with -/- #}
+        <div class='col-sm-12 col-md-4 col-lg-3'>
+            <div class='form-group row'>
+                <label for='simple_edit_options_hideMarkedOptions' class='control-label'>{{ translations.hideMarked_label }}</label>
+                <div class='col-sm-12'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name='hideMarkedOptions' type='radio' value='on' class='selector_option_radio_field ' data-id='hideMarkedOptions'/>
+                            {{ translations.hideMarked_yes }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='hideMarkedOptions' type='radio' value='off' class='selector_option_radio_field ' data-id='hideMarkedOptions'/>
+                            {{ gT("Show") }}
+                        </label>
+    
+                        {# If this is a root template stting, don't show the inherit button #}
+                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
+                            <label class="btn btn-default">
+                                <input type='radio' name='hideMarkedOptions' value='inherit' class='selector_option_radio_field simple_edit_options_hideMarkedOptions' data-id='hideMarkedOptions'/>
+                                {{ gT("Inherit") }}
+                            </label>
+                        {% endif %}
+                    </div>
+                    <br/><em>{{ translations.hideMarked_descr }}</em>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        {# Show groups as tab - for all for one page survey #}
+        <div class='col-sm-12 col-md-4 col-lg-3'>
+
+            <div class='form-group row'>
+                <label for='simple_edit_options_yesNoShowButtons' class='control-label'>{{ translations.yesNoShow_label }}</label>
+                <div class='col-sm-12'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name='yesNoShowButtons' type='radio' value='on' class='selector_option_radio_field ' data-id='yesNoShowButtons'/>
+                            {{ translations.yesNoShow_yes }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='yesNoShowButtons' type='radio' value='off' class='selector_option_radio_field ' data-id='yesNoShowButtons'/>
+                            {{ translations.yesNoShow_no }}
+                        </label>
+
+                        {# If this is a root template stting, don't show the inherit button #}
+                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
+                            <label class="btn btn-default">
+                                <input type='radio' name='groupsAsTabs' value='inherit' class='selector_option_radio_field simple_edit_options_yesNoShowButtons' data-id='yesNoShowButtons'/>
+                                {{ gT("Inherit") }}
+                            </label>
+                        {% endif %}
+                    </div>
+                    <br/><em>{{ translations.yesNoShow_descr }}</em>
+                </div>
+            </div>
+        </div>
+
+        {# Show groups as tab - for all for one page survey #}
+        <div class='col-sm-12 col-md-4 col-lg-3'>
+    
+            <div class='form-group row'>
+                <label for='simple_edit_options_groupsAsTabs' class='control-label'>{{ translations.groupsAsTabs_label }}</label>
+                <div class='col-sm-12'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name='groupsAsTabs' type='radio' value='on' class='selector_option_radio_field ' data-id='groupsAsTabs'/>
+                            {{ gT("Yes") }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='groupsAsTabs' type='radio' value='off' class='selector_option_radio_field ' data-id='groupsAsTabs'/>
+                            {{ gT("No") }}
+                        </label>
+                        
+                        {# If this is a root template stting, don't show the inherit button #}
+                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
+                            <label class="btn btn-default">
+                                <input type='radio' name='groupsAsTabs' value='inherit' class='selector_option_radio_field simple_edit_options_groupsAsTabs' data-id='groupsAsTabs'/>
+                                {{ gT("Inherit") }}
+                            </label>
+                        {% endif %}
+                    </div>
+                    <br/><em>{{ translations.groupsAsTabs_descr }}</em>
+                </div>
+            </div>
+        </div>
+        
+        {# Autonsave options #}
+        <div class='col-sm-12 col-md-4 col-lg-3'>
+
+            <div class='form-group row'>
+                <label for='simple_edit_options_autoSave' class='control-label'>{{ translations.autoSave_label }}</label>
+                <div class='col-sm-12'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name='autoSave' type='radio' value='1minute' class='selector_option_radio_field ' data-id='autoSave'/>
+                            {{ translations.autoSave_1minute }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='autoSave' type='radio' value='blur' class='selector_option_radio_field ' data-id='autoSave'/>
+                            {{ translations.autoSave_blur }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='autoSave' type='radio' value='off' class='selector_option_radio_field ' data-id='autoSave'/>
+                            {{ translations.autoSave_no }}
+                        </label>
+
+                        {# If this is a root template stting, don't show the inherit button #}
+                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
+                            <label class="btn btn-default">
+                                <input type='radio' name='autoSave' value='inherit' class='selector_option_radio_field simple_edit_options_autoSave' data-id='autoSave'/>
+                                {{ gT("Inherit") }}
+                            </label>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <hr/>
+    </div>
+</div>
