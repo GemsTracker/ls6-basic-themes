@@ -2,10 +2,11 @@
 The gt-basic LimeSurvey 3 GemsTracker integration theme simplifies the use of LimeSurvey 3 and later 
 in conjunction with GemsTracker projects.
 
-It does so by adding theme options that you can configure either for the whole theme or separately for
-each single survey. These are options that are often requisted by users.
+It does this by adding theme options that you can configure either for the whole theme or separately 
+for each single survey. These are the options most regularly requested by users.
 
-In the near future we expect some
+In the near future we expect some additional theme will be added that extend this basic functionality 
+with more specialized options. 
 
 ## Basic functions
 Installing and using the theme enables these basic functions:
@@ -41,6 +42,6 @@ On **Linux**:
 
 On **Windows**:
 
-`mklink /J gt-basic {project-dir}\vendor\gemstrack\ls3-basic-themes\src\gt-basic`
+`mklink /J gt-basic {project-dir}\vendor\gemstracker\ls3-basic-themes\src\gt-basic`
 
 This is also very useful if you want to be able to edit the project for multiple development sites.
