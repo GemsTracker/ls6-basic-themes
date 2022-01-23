@@ -61,23 +61,22 @@ function GT_hideMarkedOptions()
 
 
     // Array rows
-    $('.hide-marked-options th.answertext')
+    $('.hide-marked-options .answertext')
         .filter(function() {
             return $(this).text().replace(/\s/gm,"").startsWith(hideChars);
         })
         .each(function() {
-            $(this).closest('tr.answers-list').hide();
+            $(this).closest('.answers-list').hide();
         });
 
     // Array cols
-    $('.hide-marked-options .subquestion-list thead th')
+    $('.hide-marked-options .subquestion-list .question-item')
         .filter(function() {
-            return $(this).text().replace(/\s/gm,"").startsWith(hideChars);
+            return $('label', this).text().replace(/\s/gm,"").startsWith(hideChars);
         })
         .each(function() {
             var currentElement = $(this);
-            var index = colHeaders.index(currentElement);
-            // console.log(index);
+            var index          = $('.subquestion-list .question-item').index(currentElement);
             var answerRows = currentElement.closest('table').find('tbody .answers-list');
             answerRows.each(function(e) {
                 $(this).find('td.answer-item:eq('+ index +')').hide();
@@ -95,7 +94,7 @@ function GT_saveAjax(e, afterSaveUrl)
     if (e) {
         e.stopPropagation ? e.stopPropagation() : (e.cancelBubble=true);
     }
-    console.log(e);
+    // console.log(e);
     
     $(e).css('cursor','wait');
     $('html,body').css('cursor','wait');
