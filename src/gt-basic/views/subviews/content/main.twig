@@ -41,7 +41,7 @@
      #}
     {# { include('showOptions.twig') }}  {#   #}
     
-    {% if aSurveyInfo.options.groupsAsTabs == 'on' %}
+    {% if aSurveyInfo.options.groupsAsTabs == 'on' and aSurveyInfo.aGroups|length > 1 %}
         <div id="tabs">
             {{ include('subviews/content/groupsHeader.twig') }}
             <div class="tab-content">

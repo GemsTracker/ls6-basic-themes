@@ -44,7 +44,7 @@ The go to your LimeSurvey installation and then to the `upload/themes/survey` di
 
 On **Linux**:
 
-`ln -s gt-basic {project-dir}\vendor\gemstrack\ls3-basic-themes\src\gt-basic`
+`ln -s {gt-project-dir}/vendor/gemstracker/ls3-basic-themes/src/gt-basic gt-basic`
 
 On **Windows**:
 

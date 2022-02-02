@@ -37,14 +37,14 @@
         {% endif %}
     </div>
     <div class="{{ aSurveyInfo.class.navigatorbuttonl }} col-xs-3 text-left" {{ aSurveyInfo.attr.navigatorbuttonl }}>
-        {% if aSurveyInfo.allowsave == "Y" %}
+        {% if aSurveyInfo.allowsave == "Y" and 'firstpage' != aSurveyInfo.include_content %}
             <a {{ aSurveyInfo.attr.navigatorbuttonsubmit }} onclick="GT_saveAjax(this);" class="{{ aSurveyInfo.class.navigatorbuttonsubmit }} btn btn-lg btn-default">
                 {{ gT('Save') }} &amp; {{ gT('Continue') }}
             </a>
         {% endif %}
     </div>
     <div class="{{ aSurveyInfo.class.navigatorbuttonr }} col-xs-3 text-right">
-        {% if aSurveyInfo.allowsave == "Y" %}
+        {% if aSurveyInfo.allowsave == "Y" and 'firstpage' != aSurveyInfo.include_content %}
             <a {{ aSurveyInfo.attr.navigatorbuttonsubmit }} onclick="GT_saveAjax(this, '{{ aSurveyInfo.surveyls_url }}/continue_later/1');" class="{{ aSurveyInfo.class.navigatorbuttonsubmit }} btn btn-lg btn-default">
                 {{ gT('Save') }} &amp; {{ gT('Resume later') }}
             </a>
