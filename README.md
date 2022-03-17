@@ -13,6 +13,7 @@ Installing and using the theme enables these basic functions:
 - **Saving** and restarting **using GemsTracker** without needing the LS save/load screens.
 - **Autosaving**, every minute and / or when switching tabs/screen.
 - **Radio buttons** in **Yes No Questions**, so you know for certain which button was selected.
+- **Multi select buttons** for **Array Questions**, so you can select a column in one click.
 - **Showing groups as tabs** whan showing all questions on one page.
 - **Hiding tips** (between the question and answer) completely or clickable.
 - **Hiding help texts** (below the answer) clickable.
@@ -24,7 +25,9 @@ Installing and using the theme enables these basic functions:
 Download the .zip from the downloads map and import the theme in LimeSurvey.
 
 ## Usage
+The theme options show all theme settings at the top and describe additional functionality at the bottom.
 
+You can also download the manual from [GitHub](https://github.com/GemsTracker/ls3-basic-themes/tree/main/docs). 
 
 ## Maintenance Setup
 In order to automatically update this theme when updating a GemsTracker project, include these lines in your `composer.json` file.

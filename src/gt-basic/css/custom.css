@@ -8,7 +8,7 @@
 
 .hide-tip-click.text-info .help-content {
     display: inline-block;
-    padding-left: 1eml;
+    padding-left: 1em;
 }
 
 .hide-tip-click.text-info .help-content div{
@@ -17,6 +17,14 @@
 
 .hide-tip-click.text-info .help-content .fa.fa-exclamation-circle {
     display: none;
+}
+
+.ls-answers .ls-heading .answer-text input {
+    margin-left: 0.5em;
+}
+
+.select-all-buttons .subquestion-list thead tr {
+    background-color: #14a79d; 
 }
 
 .yesno-show-buttons [data-toggle=buttons] > .btn input[type=radio] {

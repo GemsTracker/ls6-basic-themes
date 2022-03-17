@@ -21,7 +21,7 @@
         <version>3.0.1</version>
         <apiVersion>3</apiVersion>
         <description twig="on"><![CDATA[<strong>{{gT("GemsTracker Basic Theme")}}</strong><br>{{gT("A general theme for flexible use with GemsTracker. This theme offers many options for easy customizations.")}}]]></description>
-        <last_update>2022-01-23 18:10:13</last_update>
+        <last_update>2022-03-17 13:44:41</last_update>
         <extends>fruity</extends>
     </metadata>
 
@@ -52,6 +52,8 @@
             <replace>css/custom.css</replace>
         </css>
         <js>
+            <add>scripts/jquery-ui-1.10.3.custom.min.js</add>
+            <add>scripts/jquery-radio-master.js</add>
             <replace>scripts/custom.js</replace>
         </js>
         <print_css>

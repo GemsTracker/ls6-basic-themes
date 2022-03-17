@@ -163,5 +163,11 @@ $(document).on('ready pjax:scriptcomplete', function() {
         GT_hideMarkedOptions();
     }
     
+    if ($('.select-all-buttons .subquestion-list').length > 0) {
+        $('.select-all-buttons .subquestion-list').radioMaster({
+            masters: 'thead th'
+        });
+    }
+    
     GT_focusFirst();
 });
