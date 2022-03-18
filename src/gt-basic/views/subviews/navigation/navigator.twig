@@ -45,7 +45,7 @@
     </div>
     <div class="{{ aSurveyInfo.class.navigatorbuttonr }} col-xs-3 text-right">
         {% if aSurveyInfo.allowsave == "Y" and 'firstpage' != aSurveyInfo.include_content %}
-            <a {{ aSurveyInfo.attr.navigatorbuttonsubmit }} onclick="GT_saveAjax(this, '{{ aSurveyInfo.surveyls_url }}/continue_later/1');" class="{{ aSurveyInfo.class.navigatorbuttonsubmit }} btn btn-lg btn-default">
+            <a {{ aSurveyInfo.attr.navigatorbuttonsubmit }} onclick="GT_saveAjax(this, '{{ aSurveyInfo.surveyls_url }}/resumeLater/1');" class="{{ aSurveyInfo.class.navigatorbuttonsubmit }} btn btn-lg btn-default">
                 {{ gT('Save') }} &amp; {{ gT('Resume later') }}
             </a>
         {% endif %}

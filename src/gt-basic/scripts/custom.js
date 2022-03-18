@@ -37,13 +37,14 @@ function GT_hideMarkedOptions()
     /**
      * HIDE ANSWER OPTIONS WITH LABEL STARTING WITH hideChars
      */
-    var hideChars = '-/-';
+    var hideChars  = '-/-';
+    var hideLength = hideChars.length;
 
     // radio and checkboxes
     $('.hide-marked-options .ls-answers.radio-list, .hide-marked-options .ls-answers.checkbox-list')
         .find('label.radio-label, label.checkbox-label')
         .filter(function() {
-            return $(this).text().replace(/\s/gm,"").startsWith(hideChars);
+            return hideChars == $(this).text().replace(/\s/gm,"").substr(0, hideLength);
         })
         .each(function() {
             $(this).closest('.answer-item').hide();
@@ -53,26 +54,43 @@ function GT_hideMarkedOptions()
     $('.hide-marked-options .list-dropdown')
         .find('.hide-marked-options .dropdown-item option')
         .filter(function() {
-            return $(this).text().replace(/\s/gm,"").startsWith(hideChars);
+            return hideChars == $(this).text().replace(/\s/gm,"").substr(0, hideLength);
         })
         .each(function() {
             $(this).remove();
         });
 
-
-    // Array rows
+    // Subquestion rows
     $('.hide-marked-options .answertext')
         .filter(function() {
-            return $(this).text().replace(/\s/gm,"").startsWith(hideChars);
+            return hideChars == $(this).text().replace(/\s/gm,"").substr(0, hideLength);
         })
         .each(function() {
-            $(this).closest('.answers-list').hide();
+            $(this).parent().hide();
         });
 
-    // Array cols
+    // Array columns headers
+    $('.hide-marked-options .answer-text')
+        .filter(function() {
+            return hideChars == $(this).text().replace(/\s/gm,"").substr(0, hideLength);
+        })
+        .each(function() {
+            $(this).hide();
+        });
+    // Array columns items
+    $('.hide-marked-options .answer-item')
+        .filter(function() {
+            return hideChars == $(this).text().replace(/\s/gm,"").substr(0, hideLength);
+        })
+        .each(function() {
+            $(this).hide();
+        });
+
+    // Array columns other type?
     $('.hide-marked-options .subquestion-list .question-item')
         .filter(function() {
-            return $('label', this).text().replace(/\s/gm,"").startsWith(hideChars);
+            console.log($(this).text().replace(/\s/gm,"").substr(0, hideLength), hideChars == $(this).text().replace(/\s/gm,"").substr(0, hideLength));
+            return hideChars == $(this).text().replace(/\s/gm,"").substr(0, hideLength);
         })
         .each(function() {
             var currentElement = $(this);
