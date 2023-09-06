@@ -1,3 +1,7 @@
+.hide-comment-input .comment-item input:not(.em_sq_validation) {
+    display: none;
+}
+
 .hide-slidernumber .tooltip-main.top {
     display: none;
 }
@@ -23,6 +27,26 @@
     margin-left: 0.5em;
 }
 
+.numbers-small .numeric-item input {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 30%;
+}
+.numbers-small.numbers-center .numeric-item input {
+    text-align: center;
+}
+.numbers-small.numbers-left .numeric-item input {
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: left;
+}
+.numbers-small.numbers-right .numeric-item input {
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: right;
+}
+
 .select-all-buttons .subquestion-list thead tr {
     background-color: #14a79d; 
 }
@@ -30,4 +54,13 @@
 .yesno-show-buttons [data-toggle=buttons] > .btn input[type=radio] {
   position: relative;
   pointer-events: inherit;
+}
+
+.yesno-show-radio [data-toggle=buttons] > .btn input[type=radio] {
+    position: relative;
+    pointer-events: inherit;
+}
+
+.yesno-show-radio [data-toggle=buttons] label span.fa {
+    display: inline-block;
 }

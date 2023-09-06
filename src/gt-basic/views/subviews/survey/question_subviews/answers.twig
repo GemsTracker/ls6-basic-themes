@@ -26,6 +26,15 @@
 {% endif %}
 {% if aSurveyInfo.options.yesNoShowButtons == 'on' %}
     {% set optionsClass = optionsClass ~ ' yesno-show-buttons' %}
+{% elseif aSurveyInfo.options.yesNoShowButtons == 'radio' %}
+    {% set optionsClass = optionsClass ~ ' yesno-show-radio' %}
+{% endif %}
+{% if aSurveyInfo.options.smallNumericFields == 'left' %}
+    {% set optionsClass = optionsClass ~ ' numbers-small numbers-left' %}
+{% elseif aSurveyInfo.options.smallNumericFields == 'center' %}
+    {% set optionsClass = optionsClass ~ ' numbers-small numbers-center' %}
+{% elseif aSurveyInfo.options.smallNumericFields == 'right' %}
+    {% set optionsClass = optionsClass ~ ' numbers-small numbers-right' %}
 {% endif %}
 
 <!-- Answer -->

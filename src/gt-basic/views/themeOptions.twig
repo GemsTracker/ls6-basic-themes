@@ -22,10 +22,17 @@
         'hideMarked_label':   'Verberg -/- antwoord opties',
         'hideMarked_descr':   'Verberg antwoord of subvraag met een label dat starte met -/-',
         'hideMarked_yes':     'Verberg',
+        'numericSmall_label': 'Kleinere getalsinvoervelden',
+        'numericSmall_descr': 'Beperk de breedte van invoer, plus uitlijning',
+        'numericSmall_left':  'Klein links',
+        'numericSmall_center':'Klein midden',
+        'numericSmall_right': 'Klein rechts',
+        'numericSmall_no':    'Volle breedte',
         'yesNoShow_label':    'Ja Nee Vraag weergave',
         'yesNoShow_descr':    'Voeg een selecteerbare cirkel toe aan Ja Nee Vragen zodat de geselecteerde knop duidelijk is.',
         'yesNoShow_yes':      'Keuze cirkel',
         'yesNoShow_no':       'Alleen een knop',
+        'yesNoShow_radio':    'Alleen een cirkel',
         } %}
 {%  else %}
     {%  set translations = {
@@ -47,10 +54,17 @@
         'hideMarked_label':   'Hide -/- answer options',
         'hideMarked_descr':   'Hide answer or sub question when the label starts with -/-',
         'hideMarked_yes':     'Hide',
+        'numericSmall_label': 'Smaller numeric fields',
+        'numericSmall_descr': 'Limit the width of numeric input fields',
+        'numericSmall_left':  'Small left',
+        'numericSmall_center':'Small center',
+        'numericSmall_right': 'Small right',
+        'numericSmall_no':    'Full width',
         'yesNoShow_label':    'Yes No Question display',
         'yesNoShow_descr':    'Add a selectable circle to Yes No Questions to make clear which button is selected',
         'yesNoShow_yes':      'Selectable circle',
         'yesNoShow_no':       'Button only',
+        'yesNoShow_radio':    'Circle only',
         } %}
 {% endif %}
 
@@ -89,6 +103,42 @@
             </div>
         </div>
 
+        {# Set Numeric small display to radio button #}
+        <div class='col-sm-12 col-md-4 col-lg-3'>
+            <div class='form-group row'>
+                <label for='simple_edit_options_smallNumericFields' class='control-label'>{{ translations.numericSmall_label }}</label>
+                <div class='col-sm-12'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name='smallNumericFields' type='radio' value='left' class='selector_option_radio_field ' data-id='smallNumericFields'/>
+                            {{ translations.numericSmall_left }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='smallNumericFields' type='radio' value='center' class='selector_option_radio_field ' data-id='smallNumericFields'/>
+                            {{ translations.numericSmall_center }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='smallNumericFields' type='radio' value='right' class='selector_option_radio_field ' data-id='smallNumericFields'/>
+                            {{ translations.numericSmall_right }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='smallNumericFields' type='radio' value='off' class='selector_option_radio_field ' data-id='smallNumericFields'/>
+                            {{ translations.numericSmall_no }}
+                        </label>
+
+                        {# If this is a root template stting, don't show the inherit button #}
+                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
+                            <label class="btn btn-default">
+                                <input type='radio' name='smallNumericFields' value='inherit' class='selector_option_radio_field simple_edit_options_smallNumericFields' data-id='smallNumericFields'/>
+                                {{ gT("Inherit") }}
+                            </label>
+                        {% endif %}
+                    </div>
+                    <br/><em>{{ translations.numericSmall_descr }}</em>
+                </div>
+            </div>
+        </div>
+
         {# Set Yes No to radio button #}
         <div class='col-sm-12 col-md-4 col-lg-3'>
             <div class='form-group row'>
@@ -103,11 +153,15 @@
                             <input name='yesNoShowButtons' type='radio' value='off' class='selector_option_radio_field ' data-id='yesNoShowButtons'/>
                             {{ translations.yesNoShow_no }}
                         </label>
+                        <label class="btn btn-default">
+                            <input name='yesNoShowButtons' type='radio' value='radio' class='selector_option_radio_field ' data-id='yesNoShowButtons'/>
+                            {{ translations.yesNoShow_radio }}
+                        </label>
 
                         {# If this is a root template stting, don't show the inherit button #}
                         {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
                             <label class="btn btn-default">
-                                <input type='radio' name='groupsAsTabs' value='inherit' class='selector_option_radio_field simple_edit_options_yesNoShowButtons' data-id='yesNoShowButtons'/>
+                                <input type='radio' name='yesNoShowButtons' value='inherit' class='selector_option_radio_field simple_edit_options_yesNoShowButtons' data-id='yesNoShowButtons'/>
                                 {{ gT("Inherit") }}
                             </label>
                         {% endif %}
@@ -117,6 +171,10 @@
             </div>
         </div>
 
+    </div>
+
+    {# Second settings row#}
+    <div class='row'>
         {# Show groups as tab - for all for one page survey #}
         <div class='col-sm-12 col-md-4 col-lg-3'>
             <div class='form-group row'>
@@ -144,10 +202,7 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    {# Second settings row#}
-    <div class='row'>
         {# Hide question tips until icon clicked info #}
         <div class='col-sm-12 col-md-4 col-lg-3'>
             <div class='form-group row'>
@@ -208,6 +263,10 @@
             </div>
         </div>
 
+    </div>
+
+    {# Third settings row#}
+    <div class='row'>
         {# Hide answer options starting with -/- #}
         <div class='col-sm-12 col-md-4 col-lg-3'>
             <div class='form-group row'>
