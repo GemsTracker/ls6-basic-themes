@@ -23,7 +23,7 @@
 {% set aNavigator = aSurveyInfo.aNavigator %}
 
 <!-- PRESENT THE NAVIGATOR -->
-<div class="{{ aSurveyInfo.class.navigatorcontainer }} row navigator space-col" id="{{ aSurveyInfo.id.navigatorcontainer }}" {{ aSurveyInfo.attr.navigatorcontainer }}>
+<div class="{{ aSurveyInfo.class.navigatorcontainer }} row navigator gt-buttons space-col" id="{{ aSurveyInfo.id.navigatorcontainer }}" {{ aSurveyInfo.attr.navigatorcontainer }}>
 
     <!-- Previous button container -->
     <div class="{{ aSurveyInfo.class.navigatorbuttonl }} col-xs-3 text-left" {{ aSurveyInfo.attr.navigatorbuttonl }}>
@@ -36,20 +36,22 @@
             </button>
         {% endif %}
     </div>
-    <div class="{{ aSurveyInfo.class.navigatorbuttonl }} col-xs-3 text-left" {{ aSurveyInfo.attr.navigatorbuttonl }}>
-        {% if aSurveyInfo.allowsave == "Y" and 'firstpage' != aSurveyInfo.include_content %}
-            <a {{ aSurveyInfo.attr.navigatorbuttonsubmit }} onclick="GT_saveAjax(this);" class="{{ aSurveyInfo.class.navigatorbuttonsubmit }} btn btn-lg btn-default">
-                {{ gT('Save') }} &amp; {{ gT('Continue') }}
-            </a>
+
+    {% if aSurveyInfo.allowsave == "Y" and 'firstpage' != aSurveyInfo.include_content %}
+        {% if aSurveyInfo.options.saveContinue == "off" %}
+            <div class="{{ aSurveyInfo.class.navigatorbuttonr }} save-resume col-xs-3">
+                <a {{ aSurveyInfo.attr.navigatorbuttonsubmit }} onclick="GT_saveAjax(this);" class="{{ aSurveyInfo.class.navigatorbuttonsubmit }} btn btn-lg btn-default">
+                    {{ gT('Save') }} &amp; {{ gT('Continue') }}
+                </a>
+            </div>
         {% endif %}
-    </div>
-    <div class="{{ aSurveyInfo.class.navigatorbuttonr }} col-xs-3 text-right">
-        {% if aSurveyInfo.allowsave == "Y" and 'firstpage' != aSurveyInfo.include_content %}
+        <div class="{{ aSurveyInfo.class.navigatorbuttonr }} save-resume col-xs-3">
             <a {{ aSurveyInfo.attr.navigatorbuttonsubmit }} onclick="GT_saveAjax(this, '{{ aSurveyInfo.surveyls_url }}/resumeLater/1');" class="{{ aSurveyInfo.class.navigatorbuttonsubmit }} btn btn-lg btn-default">
                 {{ gT('Save') }} &amp; {{ gT('Resume later') }}
             </a>
-        {% endif %}
-    </div>
+        </div>
+    {% endif %}
+
     <div class="{{ aSurveyInfo.class.navigatorbuttonr }} col-xs-3 text-right">
 
         {# Next button is not always shown (last page, all in one mode, etc) #}

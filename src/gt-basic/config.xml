@@ -23,8 +23,13 @@
         <description twig="on"><![CDATA[<strong>{{gT("GemsTracker Basic Theme")}}</strong><br>{{gT("A general theme for flexible use with GemsTracker. This theme offers many options for easy customizations.")}}]]></description>
         <last_update>2023-09-06 16:07:25</last_update>
         <extends>fruity</extends>
-    </metadata>
+    <lastUpdate>2024-11-21 15:38:18</lastUpdate></metadata>
 
+    <compatibility>
+        <version>3</version>
+        <version>5</version>
+        <version>6</version>
+    </compatibility>
     <!--
         Here the list of the css/js files to add to the template package.
         About packages in Yii: http://www.yiiframework.com/doc/api/1.1/CClientScript#packages-detail
@@ -71,6 +76,7 @@
         <hideClickHelp>off</hideClickHelp>
         <hideClickInfo>off</hideClickInfo>
         <hideMarkedOptions>on</hideMarkedOptions>
+        <hideSaveContinue>on</hideSaveContinue>
         <smallNumericFields>off</smallNumericFields>
         <yesNoShowButtons>on</yesNoShowButtons>
         

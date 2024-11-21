@@ -25,6 +25,11 @@
         <extends>gt-basic</extends>
     <lastUpdate>2023-10-23 13:37</lastUpdate></metadata>
 
+    <compatibility>
+        <version>3</version>
+        <version>5</version>
+        <version>6</version>
+    </compatibility>
     <!--
         Here the list of the css/js files to add to the template package.
         About packages in Yii: http://www.yiiframework.com/doc/api/1.1/CClientScript#packages-detail
@@ -73,6 +78,7 @@
         <hideClickHelp>off</hideClickHelp>
         <hideClickInfo>off</hideClickInfo>
         <hideMarkedOptions>on</hideMarkedOptions>
+        <hideSaveContinue>on</hideSaveContinue>
         <smallNumericFields>off</smallNumericFields>
         <yesNoShowButtons>on</yesNoShowButtons>
         

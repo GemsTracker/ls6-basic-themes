@@ -28,6 +28,10 @@
         'numericSmall_center':'Klein midden',
         'numericSmall_right': 'Klein rechts',
         'numericSmall_no':    'Volle breedte',
+        'saveContinue_label': 'Bewaar & ga verder knop',
+        'saveContinue_descr': 'Alleen getoond als de deelnemer mag opslaan en later hervatten',
+        'saveContinue_hide':  'Verberg',
+        'saveContinue_show':  'Toon',
         'yesNoShow_label':    'Ja Nee Vraag weergave',
         'yesNoShow_descr':    'Voeg een selecteerbare cirkel toe aan Ja Nee Vragen zodat de geselecteerde knop duidelijk is.',
         'yesNoShow_yes':      'Keuze cirkel',
@@ -60,6 +64,10 @@
         'numericSmall_center':'Small center',
         'numericSmall_right': 'Small right',
         'numericSmall_no':    'Full width',
+        'saveContinue_label': 'Save & Resume Button',
+        'saveContinue_descr': 'Only shown if participant may save en resume later',
+        'saveContinue_hide':  'Hide',
+        'saveContinue_show':  'Show',
         'yesNoShow_label':    'Yes No Question display',
         'yesNoShow_descr':    'Add a selectable circle to Yes No Questions to make clear which button is selected',
         'yesNoShow_yes':      'Selectable circle',
@@ -103,6 +111,35 @@
             </div>
         </div>
 
+        {# Show or hide save & continue button - for all for one page survey #}
+        <div class='col-sm-12 col-md-4 col-lg-3'>
+            <div class='form-group row'>
+                <label for='simple_edit_options_saveContinue' class='control-label'>{{ translations.saveContinue_label }}</label>
+                <div class='col-sm-12'>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name='saveContinue' type='radio' value='off' class='selector_option_radio_field ' data-id='saveContinue'/>
+                            {{ translations.saveContinue_show }}
+                        </label>
+                        <label class="btn btn-default">
+                            <input name='saveContinue' type='radio' value='on' class='selector_option_radio_field ' data-id='saveContinue'/>
+                            {{ translations.saveContinue_hide }}
+                        </label>
+
+                        {# If this is a root template stting, don't show the inherit button #}
+                        {% if templateConfiguration.sid is not empty or templateConfiguration.gsid is not empty %}
+                            <label class="btn btn-default">
+                                <input type='radio' name='saveContinue' value='inherit' class='selector_option_radio_field simple_edit_options_saveContinue' data-id='saveContinue'/>
+                                {{ gT("Inherit") }}
+                            </label>
+                        {% endif %}
+                    </div>
+                    <br/><em>{{ translations.saveContinue_descr }}</em>
+                </div>
+            </div>
+        </div>
+
+
         {# Set Numeric small display to radio button #}
         <div class='col-sm-12 col-md-4 col-lg-3'>
             <div class='form-group row'>
@@ -138,7 +175,11 @@
                 </div>
             </div>
         </div>
+    </div>
 
+
+    {# Second settings row#}
+    <div class='row'>
         {# Set Yes No to radio button #}
         <div class='col-sm-12 col-md-4 col-lg-3'>
             <div class='form-group row'>
@@ -171,10 +212,7 @@
             </div>
         </div>
 
-    </div>
 
-    {# Second settings row#}
-    <div class='row'>
         {# Show groups as tab - for all for one page survey #}
         <div class='col-sm-12 col-md-4 col-lg-3'>
             <div class='form-group row'>
@@ -235,6 +273,10 @@
             </div>
         </div>
 
+    </div>
+
+    {# Third settings row#}
+    <div class='row'>
         {# Hide question help until icon clicked info #}
         <div class='col-sm-12 col-md-4 col-lg-3'>
             <div class='form-group row'>
@@ -263,10 +305,6 @@
             </div>
         </div>
 
-    </div>
-
-    {# Third settings row#}
-    <div class='row'>
         {# Hide answer options starting with -/- #}
         <div class='col-sm-12 col-md-4 col-lg-3'>
             <div class='form-group row'>
