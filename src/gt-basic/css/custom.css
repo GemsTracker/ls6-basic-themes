@@ -49,20 +49,35 @@
     display: inline-block;
     margin: 0;
     padding: 0;
-    width: 30%;
+}
+.numbers-small.numbers-center .numeric-item {
+    text-align: center;
 }
 .numbers-small.numbers-center .numeric-item input {
+    float: none !important;
     text-align: center;
+    width: 30%;
+}
+.numbers-small.numbers-center .numeric-item .ls-input-group-extra {
+    width: 10%;
 }
 .numbers-small.numbers-left .numeric-item input {
     padding-left: 6px;
     padding-right: 6px;
     text-align: left;
 }
+.numbers-small.numbers-left .numeric-item .ls-input-group-extra {
+    width: 70%;
+}
+.numbers-small.numbers-right .numeric-item {
+    text-align: right;
+}
 .numbers-small.numbers-right .numeric-item input {
+    float: none !important;
     padding-left: 6px;
     padding-right: 6px;
     text-align: right;
+    width: 30%;
 }
 
 .select-all-buttons .subquestion-list thead tr {
