@@ -33,7 +33,7 @@ You can also download the manual from [GitHub](https://github.com/GemsTracker/ls
 In order to automatically update this theme when updating a GemsTracker project, include these lines in your `composer.json` file.
 - Under `"require"` add: 
 ```
-  "gemstracker/ls3-basic-themes": "dev-main",
+  "gemstracker/ls6-basic-themes": "dev-main",
 ```
 - Under `"repositories"` add: 
 ```
@@ -47,10 +47,10 @@ The go to your LimeSurvey installation and then to the `upload/themes/survey` di
 
 On **Linux**:
 
-`ln -s {gt-project-dir}/vendor/gemstracker/ls3-basic-themes/src/gt-basic gt-basic`
+`ln -s {gt-project-dir}/vendor/gemstracker/ls6-basic-themes/src/gt2-basic gt2-basic`
 
 On **Windows**:
 
-`mklink /J gt-basic {project-dir}\vendor\gemstracker\ls3-basic-themes\src\gt-basic`
+`mklink /J gt2-basic {project-dir}\vendor\gemstracker\ls6-basic-themes\src\gt2-basic`
 
 This is also very useful if you want to be able to edit the project for multiple development sites.

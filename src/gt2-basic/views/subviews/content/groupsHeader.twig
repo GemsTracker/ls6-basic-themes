@@ -1,0 +1,13 @@
+
+{% if aSurveyInfo.aGroups|length > 1 %}
+    <ul class='nav nav-tabs'>
+        {# limesurvey numbers group divs group-0 to group-x, use this to create links, and move the li's to the right spot. #}
+        {%  set tabNum = 0 %}
+        {%  set activeClass = 'active' %}
+        {% for aGroup in aSurveyInfo.aGroups %}
+            <li  role="presentation" class="tab-item {{ activeClass }}"><a href="#group-{{ tabNum }}" aria-controls="group-{{ tabNum }}" role="tab" data-toggle="tab">{{ aGroup.name }}</a></li>        
+            {%  set tabNum = tabNum + 1 %}
+            {%  set activeClass = '' %}
+        {% endfor %}
+    </ul>
+{% endif %}

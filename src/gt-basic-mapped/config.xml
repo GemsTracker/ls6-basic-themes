@@ -28,7 +28,6 @@
     <compatibility>
         <version>3</version>
         <version>5</version>
-        <version>6</version>
     </compatibility>
     <!--
         Here the list of the css/js files to add to the template package.
