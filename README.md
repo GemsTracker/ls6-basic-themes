@@ -1,4 +1,4 @@
-# LS3 basic theme
+# LS6 basic theme
 The gt-basic LimeSurvey 3 GemsTracker integration theme simplifies the use of LimeSurvey 3 and later 
 in conjunction with GemsTracker projects.
 
@@ -39,7 +39,7 @@ In order to automatically update this theme when updating a GemsTracker project,
 ```
 {
   "type": "git",
-  "url": "https://github.com/GemsTracker/ls3-basic-themes.git"
+  "url": "https://github.com/GemsTracker/ls6-basic-themes.git"
 },
 ```
 

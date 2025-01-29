@@ -1,6 +1,6 @@
 {
-  "name": "gemstracker/ls3-basic-themes",
-  "description": "A LimeSurvey 3 GemsTracker integration theme",
+  "name": "gemstracker/ls6-basic-themes",
+  "description": "A LimeSurvey 6 GemsTracker integration theme",
   "version": "0.9.0",
   "license": "BSD-3-Clause",
   "type": "library",
