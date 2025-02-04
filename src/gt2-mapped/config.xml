@@ -22,7 +22,7 @@
         <version>1.0.0</version>
         <apiVersion>3.0</apiVersion>
         <description twig="on"><![CDATA[<strong>{{gT("GemsTracker Basic Theme")}}</strong><br>{{gT("A general theme for flexible use with GemsTracker using clcikable map questions.")}}]]></description>
-        <lastUpdate>2025-01-28 18:17:02</lastUpdate>
+        <lastUpdate>2025-02-04 19:07:41</lastUpdate>
         <extends>gt2-basic</extends>
     </metadata>
 
@@ -87,6 +87,9 @@
         </hideClickHelp>
         <hideMarkedOptions type="buttons" category="Simple options" width="4" title="Hide -/- answer options" options="on|off" optionlabels="Hide|No">on
         </hideMarkedOptions>
+
+        <questionIndexOnTop type="buttons" category="Simple options" width="8" title="Show question index on top" options="on|off" optionlabels="On|Off">off
+        </questionIndexOnTop>
 
         <hideprivacyinfo type="buttons" category="Simple options" width="4" title="Hide privacy info" options="on|off" optionlabels="Yes|No">off
         </hideprivacyinfo>

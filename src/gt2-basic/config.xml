@@ -22,7 +22,7 @@
         <version>1.0.0</version>
         <apiVersion>3.0</apiVersion>
         <description twig="on"><![CDATA[<strong>{{gT("GemsTracker Basic Theme")}}</strong><br>{{gT("A general theme for flexible use with GemsTracker. This theme offers many options for easy customizations.")}}]]></description>
-        <lastUpdate>2025-01-28 17:04:09</lastUpdate>
+        <lastUpdate>2025-02-04 19:50:42</lastUpdate>
         <extends>fruity_twentythree</extends>
     </metadata>
 
@@ -80,7 +80,7 @@
     <options>
         <autoSave type="buttons" category="Simple options" width="4" title="Autosave" options="1minute|blur|none" optionlabels="Every minute|When switching windows|Never">none
         </autoSave>
-        <hideSaveContinue type="buttons" category="Simple options" width="4" title="Save &amp; Resume Button" options="on|off" optionlabels="Hide|Show">off
+        <hideSaveContinue type="buttons" category="Simple options" width="4" title="Save &amp; Continue Button" options="on|off" optionlabels="Hide|Show">off
         </hideSaveContinue>
         <smallNumericFields type="buttons" category="Simple options" width="4" title="Smaller numeric fields" options="left|center|right|off" optionlabels="Small left|Small center|Small right|Full width">off
         </smallNumericFields>
@@ -90,6 +90,9 @@
         </hideClickHelp>
         <hideMarkedOptions type="buttons" category="Simple options" width="4" title="Hide -/- answer options" options="on|off" optionlabels="Hide|No">on
         </hideMarkedOptions>
+
+        <questionIndexOnTop type="buttons" category="Simple options" width="8" title="Show question index on top" options="on|off" optionlabels="On|Off">off
+        </questionIndexOnTop>
 
         <hideprivacyinfo type="buttons" category="Simple options" width="4" title="Hide privacy info" options="on|off" optionlabels="Yes|No">off
         </hideprivacyinfo>

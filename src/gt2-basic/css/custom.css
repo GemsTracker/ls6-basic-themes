@@ -1,3 +1,7 @@
+.group-container .group-title {
+    margin-top: 0.5em;    
+}
+
 .gt-buttons  {
     display: flex;    
     flex-direction: row; 
@@ -79,3 +83,24 @@
 .select-all-buttons .subquestion-list thead tr {
     background-color: #14a79d; 
 }
+
+
+.small-dropdown {
+    font-size: 80%;    
+}
+
+#survey-nav #navbar-menu .navbar-toggler {
+    display: inline-block;
+    padding-left: 1em;
+    vertical-align: top;
+}
+
+#survey-nav #navbar-menu ul li.list-group-item {
+    padding: 0.25rem 1rem;
+}
+
+#survey-nav #navbar-menu ul li.list-group-item.index-item-current a {
+    color: grey;
+    font-style: italic;
+}
+
