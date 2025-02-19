@@ -25,8 +25,10 @@ If you want to see what is availabe in aNavigator, turn debug mode on in applica
 {% if aSurveyInfo.allowsave == "Y" and 'firstpage' != aSurveyInfo.include_content %}
     {% if aSurveyInfo.options.hideSaveContinue == "off" %}
         {% set colClass = 'col-3' %}
+        {% set centerClass = 'col-6' %}
     {% else %}
         {% set colClass = 'col-4' %}
+        {% set centerClass = 'col-4' %}
     {% endif %}
 {% else %}
     {% set colClass = 'col-6' %}
@@ -47,14 +49,12 @@ If you want to see what is availabe in aNavigator, turn debug mode on in applica
         {% endif %}
     </div>
     {% if aSurveyInfo.allowsave == "Y" and 'firstpage' != aSurveyInfo.include_content %}
-        {% if aSurveyInfo.options.hideSaveContinue == "off" %}
-            <div class="{{ aSurveyInfo.class.navigatorbuttonl }} {{ colClass }} text-middle" {{ aSurveyInfo.attr.navigatorbuttonl }}>
+        <div class="{{ aSurveyInfo.class.navigatorbuttonl }} {{ centerClass }} text-middle" {{ aSurveyInfo.attr.navigatorbuttonl }}>
+            {% if aSurveyInfo.options.hideSaveContinue == "off" %}
                 <a {{ aSurveyInfo.attr.navigatorbuttonsubmit }} onclick="GT_saveAjax(this);" class="{{ aSurveyInfo.class.navigatorbuttonsubmit }} save-continue btn btn-lg btn-outline-secondary">
                     {{ gT('Save') }} &amp; {{ gT('Continue') }}
                 </a>
-            </div>
-        {% endif %}
-        <div class="{{ aSurveyInfo.class.navigatorbuttonl }} {{ colClass }} text-middle" {{ aSurveyInfo.attr.navigatorbuttonl }}>
+            {% endif %}
              <a {{ aSurveyInfo.attr.navigatorbuttonsubmit }} onclick="GT_saveAjax(this, '{{ aSurveyInfo.surveyls_url }}?resumeLater=1');" class="{{ aSurveyInfo.class.navigatorbuttonsubmit }} save-resume btn btn-lg btn-outline-secondary">
                  {{ gT('Save') }} &amp; {{ gT('Resume later') }}
             </a>

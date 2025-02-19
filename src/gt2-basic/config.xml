@@ -22,7 +22,7 @@
         <version>1.0.0</version>
         <apiVersion>3.0</apiVersion>
         <description twig="on"><![CDATA[<strong>{{gT("GemsTracker Basic Theme")}}</strong><br>{{gT("A general theme for flexible use with GemsTracker. This theme offers many options for easy customizations.")}}]]></description>
-        <lastUpdate>2025-02-04 19:50:42</lastUpdate>
+        <lastUpdate>2025-02-19 18:22:42</lastUpdate>
         <extends>fruity_twentythree</extends>
     </metadata>
 
@@ -91,7 +91,7 @@
         <hideMarkedOptions type="buttons" category="Simple options" width="4" title="Hide -/- answer options" options="on|off" optionlabels="Hide|No">on
         </hideMarkedOptions>
 
-        <questionIndexOnTop type="buttons" category="Simple options" width="8" title="Show question index on top" options="on|off" optionlabels="On|Off">off
+        <questionIndexOnTop type="buttons" category="Simple options" width="9" title="Show question index on top" options="on|off" optionlabels="On|Off">off
         </questionIndexOnTop>
 
         <hideprivacyinfo type="buttons" category="Simple options" width="4" title="Hide privacy info" options="on|off" optionlabels="Yes|No">off
