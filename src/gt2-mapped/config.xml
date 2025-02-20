@@ -22,7 +22,7 @@
         <version>1.0.0</version>
         <apiVersion>3.0</apiVersion>
         <description twig="on"><![CDATA[<strong>{{gT("GemsTracker Basic Theme")}}</strong><br>{{gT("A general theme for flexible use with GemsTracker using clcikable map questions.")}}]]></description>
-        <lastUpdate>2025-02-04 19:07:41</lastUpdate>
+        <lastUpdate>2025-02-20 12:57:46</lastUpdate>
         <extends>gt2-basic</extends>
     </metadata>
 
@@ -62,6 +62,8 @@
         <js>
             <add>scripts/jquery-ui-1.12.1.min.js</add>
             <add>scripts/imagemap.js</add>
+            <add>scripts/theme.js</add>
+            <add>scripts/custom.js</add>
             <remove>survey.js</remove>
             <remove>template-core.js</remove>4
         </js>

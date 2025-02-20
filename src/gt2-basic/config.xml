@@ -61,7 +61,6 @@
         </css>
         <js>
             <add>scripts/jquery-ui-1.12.1.min.js</add>
-            <add>scripts/jquery-radio-master.js</add>
             <add>scripts/theme.js</add>
             <replace>scripts/custom.js</replace>
          <!--    <add>bootstrap_5/js/bootstrap_5.js</add>  -->
