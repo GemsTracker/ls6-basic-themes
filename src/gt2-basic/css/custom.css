@@ -60,7 +60,7 @@
 .numbers-small.numbers-center .numeric-item input {
     float: none !important;
     text-align: center;
-    width: 33%;
+    width: 30%;
 }
 .numbers-small.numbers-center .numeric-item.withprefix input {
     margin-right: 50%;
@@ -78,18 +78,18 @@
     text-align: center;
 }
 .numbers-small.numbers-center .numeric-item .ls-input-group-extra.prefix {
-    width: 33%;
+    width: 30%;
     text-align: right;
 }
 .numbers-small.numbers-center .numeric-item .ls-input-group-extra.suffix {
-    width: 33%;
+    width: 30%;
     text-align: left;
 }
 .numbers-small.numbers-left .numeric-item input {
     padding-left: 6px;
     padding-right: 6px;
     text-align: left;
-    width: 33%;
+    width: 30%;
 }
 .numbers-small.numbers-left .numeric-item.withsuffix input {
     width: 100%;
@@ -102,7 +102,7 @@
     width: 1%;
 }
 .numbers-small.numbers-left .numeric-item .ls-input-group-extra.suffix {
-    width: 66%;
+    width: 60%;
 }
 .xnumbers-small.numbers-right .numeric-item {
     text-align: right;
@@ -112,7 +112,7 @@
     padding-left: 6px;
     padding-right: 6px;
     text-align: right;
-    width: 33%;
+    width: 30%;
 }
 .numbers-small.numbers-right .numeric-item.withprefix input {
     width: 100%;
@@ -123,13 +123,12 @@
 
 .numbers-small.numbers-right .numeric-item .ls-input-group-extra.prefix {
     text-align: right;
-    width: 66%;
+    width: 60%;
 }
 
 .select-all-buttons .subquestion-list thead tr {
     background-color: #14a79d; 
 }
-
 
 .small-dropdown {
     font-size: 80%;    

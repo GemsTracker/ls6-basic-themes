@@ -22,7 +22,7 @@
         <version>1.0.0</version>
         <apiVersion>3.0</apiVersion>
         <description twig="on"><![CDATA[<strong>{{gT("GemsTracker Basic Theme")}}</strong><br>{{gT("A general theme for flexible use with GemsTracker. This theme offers many options for easy customizations.")}}]]></description>
-        <lastUpdate>2025-02-19 18:22:42</lastUpdate>
+        <lastUpdate>2025-02-21 19:08:52</lastUpdate>
         <extends>fruity_twentythree</extends>
     </metadata>
 
