@@ -1,3 +1,4 @@
+
 /*
  * Make the help-content clickable
  */
@@ -183,3 +184,4 @@ $(document).on('ready pjax:scriptcomplete', function() {
     
     GT_focusFirst();
 });
+

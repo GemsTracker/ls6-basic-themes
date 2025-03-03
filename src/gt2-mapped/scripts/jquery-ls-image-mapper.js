@@ -1,10 +1,11 @@
-jQuery.widget("ui.lsImageMapper", {
+$.widget("ui.lsImageMapper", {
     // default options
     options: {
         answerDisplays: {},
         colorLegend: true,
         defaultDisplay: {
             fill: false,
+            hideAnswers: false,
             stroke: true,
             strokeColor: '808080',
             strokeOpacity: 0.75,
@@ -12,7 +13,7 @@ jQuery.widget("ui.lsImageMapper", {
         },
         defaultValue: null,
         highlightArea: null,
-        highlightQuestion: '#A7A9D1'
+        highlightQuestion: '#A7A9D1',
     },
 
     _create: function () {
@@ -190,7 +191,7 @@ jQuery.widget("ui.lsImageMapper", {
 
         // Start maphilight
         jQuery('img[usemap=#' + this.element.attr("id") + ']').maphilight({});
-
+7
         // Program the child activites
         jQuery('area', this.element)
             .attr('alt', this.getTitle)
@@ -247,6 +248,10 @@ jQuery.widget("ui.lsImageMapper", {
             jQuery('#javatbd' + areaIds[i]).hover(rowHoverIn, rowHoverOut);
             jQuery('#javatbd' + areaIds[i] + ' td').click(cellClick);
             jQuery('#javatbd' + areaIds[i] + ' td input').click(inputClick);
+        }
+
+        if (true === this.options.defaultDisplay.hideAnswers) {
+            $(this.element).closest('.question-container').find('table.ls-answers').hide();
         }
     },
 

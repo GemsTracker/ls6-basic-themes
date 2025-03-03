@@ -18,6 +18,7 @@ jQuery.widget("ui.radioMaster", {
         mastersCreate: '<input type="radio" />',
         mastersName: null,
         mastersPrepend: false,
+        mastersTextColor: '#FFFFFF',
         servants: 'tbody'
     },
 
@@ -83,6 +84,7 @@ jQuery.widget("ui.radioMaster", {
 
         $master = jQuery(this.options.mastersCreate);
         $master.attr('name', this.options.mastersName);
+        jQuery(to).css('color', this.options.mastersTextColor);
 
         // console.log(to, this.options.mastersCreate, $master);
         if (this.options.mastersPrepend) {

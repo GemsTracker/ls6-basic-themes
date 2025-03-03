@@ -54,18 +54,21 @@
             <add>css/variations/theme_apple.css</add>
             <add>css/base.css</add>
             <add>css/custom.css</add>
+            <add>css/jquery-ui.css</add>
             <remove>survey.css</remove>
             <remove>template-core.css</remove>
             <remove>awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css</remove>
             <remove>awesome-bootstrap-checkbox/awesome-bootstrap-checkbox-rtl.css</remove>
         </css>
         <js>
-            <add>scripts/jquery-ui-1.12.1.min.js</add>
-            <add>scripts/imagemap.js</add>
+            <add>scripts/jquery-ui.min.js</add>
+            <add>scripts/jquery-radio-master.js</add>
+            <add>scripts/jquery.maphilight.min.js</add>
+            <add>scripts/jquery-ls-image-mapper.js</add>
             <add>scripts/theme.js</add>
             <add>scripts/custom.js</add>
             <remove>survey.js</remove>
-            <remove>template-core.js</remove>4
+            <remove>template-core.js</remove>
         </js>
         <print_css>
             <add>css/print_theme.css</add>

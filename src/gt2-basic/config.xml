@@ -22,7 +22,7 @@
         <version>1.0.0</version>
         <apiVersion>3.0</apiVersion>
         <description twig="on"><![CDATA[<strong>{{gT("GemsTracker Basic Theme")}}</strong><br>{{gT("A general theme for flexible use with GemsTracker. This theme offers many options for easy customizations.")}}]]></description>
-        <lastUpdate>2025-02-21 19:08:52</lastUpdate>
+        <lastUpdate>2025-03-02 13:11:08</lastUpdate>
         <extends>fruity_twentythree</extends>
     </metadata>
 
@@ -60,10 +60,9 @@
             <remove>awesome-bootstrap-checkbox/awesome-bootstrap-checkbox-rtl.css</remove>
         </css>
         <js>
-            <add>scripts/jquery-ui-1.12.1.min.js</add>
+            <!-- add>scripts/jquery-ui-1.12.1.min.js</add -->
             <add>scripts/theme.js</add>
             <replace>scripts/custom.js</replace>
-         <!--    <add>bootstrap_5/js/bootstrap_5.js</add>  -->
             <remove>survey.js</remove>
             <remove>template-core.js</remove>
         </js>
@@ -77,6 +76,7 @@
     <!-- for animations, see https://daneden.github.io/animate.css/ -->
     <!-- for checkbox icons, use the Unicode of the charcter (eg: http://fontawesome.io/icon/check/ is f00c ) -->
     <options>
+
         <autoSave type="buttons" category="Simple options" width="4" title="Autosave" options="1minute|blur|none" optionlabels="Every minute|When switching windows|Never">none
         </autoSave>
         <hideSaveContinue type="buttons" category="Simple options" width="4" title="Save &amp; Continue Button" options="on|off" optionlabels="Hide|Show">off
