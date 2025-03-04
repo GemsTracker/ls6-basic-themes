@@ -4,7 +4,8 @@
 //<![CDATA[
 $(document).ready(function () {
     $('div#question{QID} table.subquestions-list').radioMaster({
-        masters: 'thead th'
+        masters: 'thead th',
+        mastersTextColor: '#FFFFFF'
     });
 });
 //]]>
@@ -18,7 +19,7 @@ jQuery.widget("ui.radioMaster", {
         mastersCreate: '<input type="radio" />',
         mastersName: null,
         mastersPrepend: false,
-        mastersTextColor: '#FFFFFF',
+        mastersTextColor: null,
         servants: 'tbody'
     },
 
@@ -84,7 +85,9 @@ jQuery.widget("ui.radioMaster", {
 
         $master = jQuery(this.options.mastersCreate);
         $master.attr('name', this.options.mastersName);
-        jQuery(to).css('color', this.options.mastersTextColor);
+        if (null !== this.options.mastersTextColor) {
+            jQuery(to).css('color', this.options.mastersTextColor);
+        }
 
         // console.log(to, this.options.mastersCreate, $master);
         if (this.options.mastersPrepend) {

@@ -5,13 +5,13 @@ $.widget("ui.lsImageMapper", {
         colorLegend: true,
         defaultDisplay: {
             fill: false,
-            hideAnswers: false,
             stroke: true,
             strokeColor: '808080',
             strokeOpacity: 0.75,
             strokeWidth: 1
         },
         defaultValue: null,
+        hideAnswers: false,
         highlightArea: null,
         highlightQuestion: '#A7A9D1',
     },
@@ -146,14 +146,14 @@ $.widget("ui.lsImageMapper", {
             return;
         }
 
-        // The the legend to the display colors
+        // The legend to the display colors
         if (this.options.colorLegend) {
             jQuery('#javatbd' + areaIds[0]).parent().parent().find('thead th').map(function () {
                 var $this, newdata, text, value;
 
                 $this = jQuery(this);
                 text  = $this.text();
-                value = answerElements.filter('[title="' + text + '"]').val();
+                value = $this.attr('id').split('-')[1];
 
                 if (thisMapper.options.answerDisplays[value]) {
                     newdata = thisMapper.options.answerDisplays[value];
@@ -250,7 +250,7 @@ $.widget("ui.lsImageMapper", {
             jQuery('#javatbd' + areaIds[i] + ' td input').click(inputClick);
         }
 
-        if (true === this.options.defaultDisplay.hideAnswers) {
+        if (true === this.options.hideAnswers) {
             $(this.element).closest('.question-container').find('table.ls-answers').hide();
         }
     },
