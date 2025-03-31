@@ -93,7 +93,11 @@
         <hideMarkedOptions type="buttons" category="Simple options" width="4" title="Hide -/- answer options" options="on|off" optionlabels="Hide|No">on
         </hideMarkedOptions>
 
-        <questionIndexOnTop type="buttons" category="Simple options" width="9" title="Show question index on top" options="on|off" optionlabels="On|Off">off
+        <subQuestionAlign type="buttons" category="Simple options" width="4" title="Align sub question labels" options="left|right" optionlabels="Left|Right">left
+        </subQuestionAlign>
+        <subQuestionsGrid type="buttons" category="Simple options" width="4" title="Show sub-question in grid" options="on|off" optionlabels="On|Off">off
+        </subQuestionsGrid>
+        <questionIndexOnTop type="buttons" category="Simple options" width="4" title="Show question index on top" options="on|off" optionlabels="On|Off">off
         </questionIndexOnTop>
 
         <hideprivacyinfo type="buttons" category="Simple options" width="4" title="Hide privacy info" options="on|off" optionlabels="Yes|No">off
@@ -119,7 +123,7 @@
         <!-- fonts -->
         <!--  When adding new items, please keep them ordered alphabetically -->
         <font type="dropdown" category="Fonts" width="12" title="Fonts" parent="font">
-            ibm-sans
+            noto
             <dropdownoptions>
                 <optgroup label="User browser">
                     <option class="font-arial           " value="arial" data-font-package="websafe">Arial</option>

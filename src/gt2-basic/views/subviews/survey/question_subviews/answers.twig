@@ -32,6 +32,14 @@
 {% elseif aSurveyInfo.options.smallNumericFields == 'right' %}
     {% set optionsClass = optionsClass ~ ' numbers-small numbers-right' %}
 {% endif %}
+{% if aSurveyInfo.options.subQuestionAlign == 'left' %}
+    {% set optionsClass = optionsClass ~ ' sub-align-left' %}
+{% elseif aSurveyInfo.options.subQuestionAlign == 'right' %}
+    {% set optionsClass = optionsClass ~ ' sub-align-right' %}
+{% endif %}
+{% if aSurveyInfo.options.subQuestionsGrid == 'on' %}
+    {% set optionsClass = optionsClass ~ ' sub-grid-on' %}
+{% endif %}
 
 <!-- Answer -->
 <div class="{{ aSurveyInfo.class.answercontainer }} col-xs-12 {{ optionsClass }}" {{ aSurveyInfo.attr.answercontainer }}>

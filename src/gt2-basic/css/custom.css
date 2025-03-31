@@ -1,5 +1,24 @@
+
+body .group-container {
+    margin-bottom: 0;
+}
+
+body .group-container .question-container {
+    margin-bottom: 0;
+}
+
+body #dynamicReloadContainer .top-container {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+body.brand-logo #dynamicReloadContainer .top-container .top-content {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
 .group-container .group-title {
-    margin-top: 0.5em;    
+    margin-top: 0;
 }
 
 .gt-buttons  {
@@ -126,12 +145,32 @@
     width: 60%;
 }
 
+.question-title-container i.asterisk {
+    color: red;
+}
+
 .select-all-buttons .subquestion-list thead tr {
     background-color: #14a79d; 
 }
 
 .small-dropdown {
     font-size: 80%;    
+}
+
+.sub-align-left table tbody tr th.answertext {
+    text-align: left;
+}
+
+.sub-align-right table tbody tr th.answertext {
+    text-align: right;
+}
+
+.sub-grid-on table tbody tr:nth-child(odd) {
+    background: lightgrey;
+}
+
+.sub-grid-on ul li:nth-child(odd) {
+    background: lightgrey;
 }
 
 #survey-nav #navbar-menu .navbar-toggler {
