@@ -37,8 +37,10 @@
 {% elseif aSurveyInfo.options.subQuestionAlign == 'right' %}
     {% set optionsClass = optionsClass ~ ' sub-align-right' %}
 {% endif %}
-{% if aSurveyInfo.options.subQuestionsGrid == 'on' %}
-    {% set optionsClass = optionsClass ~ ' sub-grid-on' %}
+{% if aSurveyInfo.options.subQuestionsGrid == 'odd' %}
+    {% set optionsClass = optionsClass ~ ' sub-grid-odd' %}
+{% elseif aSurveyInfo.options.subQuestionsGrid == 'lines' %}
+    {% set optionsClass = optionsClass ~ ' sub-grid-lines' %}
 {% endif %}
 
 <!-- Answer -->

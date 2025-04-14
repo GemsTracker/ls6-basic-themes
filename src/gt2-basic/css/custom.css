@@ -1,3 +1,12 @@
+body.brand-logo #dynamicReloadContainer .top-container .top-content {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+body #dynamicReloadContainer .top-container {
+    margin-bottom: 0;
+    margin-top: 0;
+}
 
 body .group-container {
     margin-bottom: 0;
@@ -7,14 +16,10 @@ body .group-container .question-container {
     margin-bottom: 0;
 }
 
-body #dynamicReloadContainer .top-container {
-    margin-bottom: 0;
-    margin-top: 0;
-}
-
-body.brand-logo #dynamicReloadContainer .top-container .top-content {
-    margin-bottom: 0;
-    margin-top: 0;
+body .group-container .row.group-questions {
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 8px;
 }
 
 .group-container .group-title {
@@ -165,11 +170,16 @@ body.brand-logo #dynamicReloadContainer .top-container .top-content {
     text-align: right;
 }
 
-.sub-grid-on table tbody tr:nth-child(odd) {
-    background: lightgrey;
+.sub-grid-lines table tbody tr {
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
 }
 
-.sub-grid-on ul li:nth-child(odd) {
+.sub-grid-lines ul li {
+    border-bottom: 2px solid black;
+}
+
+.sub-grid-odd table tbody tr:nth-child(odd), .sub-grid-odd ul li:nth-child(odd) {
     background: lightgrey;
 }
 

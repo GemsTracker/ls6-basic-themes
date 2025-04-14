@@ -93,11 +93,13 @@
         <hideMarkedOptions type="buttons" category="Simple options" width="4" title="Hide -/- answer options" options="on|off" optionlabels="Hide|No">on
         </hideMarkedOptions>
 
+        <groupQuestions type="buttons" category="Simple options" width="4" title="Draw box around each question" options="on|off" optionlabels="On|Off">off
+        </groupQuestions>
         <subQuestionAlign type="buttons" category="Simple options" width="4" title="Align sub question labels" options="left|right" optionlabels="Left|Right">left
         </subQuestionAlign>
-        <subQuestionsGrid type="buttons" category="Simple options" width="4" title="Show sub-question in grid" options="on|off" optionlabels="On|Off">off
+        <subQuestionsGrid type="buttons" category="Simple options" width="4" title="Show sub-question in grid" options="shade|lines|off" optionlabels="Odd|Lines|Off">off
         </subQuestionsGrid>
-        <questionIndexOnTop type="buttons" category="Simple options" width="4" title="Show question index on top" options="on|off" optionlabels="On|Off">off
+        <questionIndexOnTop type="buttons" category="Simple options" width="9" title="Show question index on top" options="on|off" optionlabels="On|Off">off
         </questionIndexOnTop>
 
         <hideprivacyinfo type="buttons" category="Simple options" width="4" title="Hide privacy info" options="on|off" optionlabels="Yes|No">off
