@@ -109,6 +109,14 @@
         </questionhelptextposition>
         <fixnumauto type="buttons" category="Simple options" width="4" title="Fix automatically numeric value" options="enable|partial|disable" optionlabels="Yes|For expression|No">enable
         </fixnumauto>
+
+        <showsurveyname type="buttons" category="Simple options" width="4" title="Show survey name in header" options="on|off" optionlabels="On|Off">on
+        </showsurveyname>
+        <showrequiredasterisk type="buttons" category="Simple options" width="4" title="Show required asterisk" options="on|off" optionlabels="On|Off">on
+        </showrequiredasterisk>
+        <hidelogowhensmall type="buttons" category="Simple options" width="4" title="Hide logo in small screens" options="on|off" optionlabels="On|Off">on
+        </hidelogowhensmall>
+
         <!-- images -->
         <backgroundimage type="buttons" category="Images" width="4" title="Background image" options="on|off" optionlabels="Yes|No">off
         </backgroundimage>

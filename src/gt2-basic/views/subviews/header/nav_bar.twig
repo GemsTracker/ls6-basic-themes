@@ -21,9 +21,17 @@ For the survey navigator ("Next", "Back", etc.), see: navigation/navigator.twig
     <div id="survey-nav" class="navbar fixed-top">
         <div class="container-fluid col-xl-8">
             {% if( aSurveyInfo.options.brandlogo == "on") %}
+                {% if( aSurveyInfo.options.hidelogowhensmall == "on") %}
                 <div class="navbar-brand logo-container d-none d-md-block">
+                {% else %}
+                <div class="navbar-brand logo-container">
+                {% endif %}
+                
                     {{ image(aSurveyInfo.options.brandlogofile, aSurveyInfo.name, {"class": "logo img-fluid"}) }}
                 </div>
+            {% endif %}
+            {% if( aSurveyInfo.options.showsurveyname == "on") %}
+            <div>{{ aSurveyInfo.name }}</div>
             {% endif %}
             <div id="navbar-menu" class="dropdown ms-auto ls-no-js-hidden">
                 {%  if (aSurveyInfo.aQuestionIndex.bShow == true and aSurveyInfo.options.questionIndexOnTop == 'on') %}
