@@ -1,0 +1,57 @@
+body .group-container .row.group-questions {
+  padding: .5rem;
+  border-color: rgba(0,0,0,.25) !important;
+}
+.group-container .group-title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.question-container .ls-label-question {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.question-container .question-help-container {
+  font-size: .9rem;
+  font-weight: 400;
+}
+.ls-answers label, .answer-item label, .control-label {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.ls-answers label, .answer-item label, .control-label
+
+.question-container .ls-question-message {
+
+}
+
+li.radio-item {
+  margin-bottom: 0;
+}
+
+.form-control {
+  border-width: 1px;
+  border-color: rgba(0,0,0,.25);
+  margin-bottom: ;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+
+.ls-answers th {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.ls-answers .ls-heading th {
+  font-weight: 600;
+}
+
+.navbar > .container-fluid {
+  align-items: end;
+}
+
+.logo-container > img {
+  padding: 0;
+}
