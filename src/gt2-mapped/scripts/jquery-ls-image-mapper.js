@@ -191,7 +191,7 @@ $.widget("ui.lsImageMapper", {
 
         // Start maphilight
         jQuery('img[usemap=#' + this.element.attr("id") + ']').maphilight({});
-7
+
         // Program the child activites
         jQuery('area', this.element)
             .attr('alt', this.getTitle)
@@ -234,12 +234,10 @@ $.widget("ui.lsImageMapper", {
         };
         cellClick = function () {
             var areaId = jQuery('input', this).attr('name');
-
             thisMapper.setAreaDisplay(areaId);
         };
         inputClick = function () {
             var areaId = this.getAttribute('name');
-
             thisMapper.setAreaDisplay(areaId);
         };
         for (i = 0; i < areaCount; i = i + 1) {
@@ -262,7 +260,7 @@ $.widget("ui.lsImageMapper", {
 
         value = this.getAreaValue(areaId);
         //console.log(areaId, value);
-
+        
         if (this.options.answerDisplays[value]) {
             newdata = this.options.answerDisplays[value];
         } else {
@@ -282,6 +280,8 @@ $.widget("ui.lsImageMapper", {
 
         // Set the input element and communicate action
         jQuery('#answer' + areaId + '-' + value).attr('checked', true).click();
+        
+        jQuery('#answer' + areaId + '-' + value).change();
     },
 
     setCssOpacity: function (jq, attr, color, opacity) {

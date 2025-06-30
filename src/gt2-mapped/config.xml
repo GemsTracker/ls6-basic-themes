@@ -22,7 +22,7 @@
         <version>1.0.0</version>
         <apiVersion>3.0</apiVersion>
         <description twig="on"><![CDATA[<strong>{{gT("GemsTracker Basic Theme")}}</strong><br>{{gT("A general theme for flexible use with GemsTracker using clcikable map questions.")}}]]></description>
-        <lastUpdate>2025-02-20 12:57:46</lastUpdate>
+        <lastUpdate>2025-06-30 13:09:51</lastUpdate>
         <extends>gt2-basic</extends>
     </metadata>
 
@@ -225,6 +225,11 @@
                     <file type="js">./scripts/theme.js</file>
                     <file type="css">./css/custom.css</file>
                     <file type="js">./scripts/custom.js</file>
+                    <file type="js">./scripts/jquery-ui.min.js</file>
+                    <file type="js">./scripts/jquery-radio-master.js</file>
+                    <file type="js">./scripts/jquery.maphilight.min.js</file>
+                    <file type="js">./scripts/jquery-ls-image-mapper.js</file>
+                    <file type="js">./scripts/theme.js</file>
                 </question>
 
                 <surveylist>
@@ -318,6 +323,11 @@
                     <file type="js">./scripts/theme.js</file>
                     <file type="css">./css/custom.css</file>
                     <file type="js">./scripts/custom.js</file>
+                    <file type="js">./scripts/jquery-ui.min.js</file>
+                    <file type="js">./scripts/jquery-radio-master.js</file>
+                    <file type="js">./scripts/jquery.maphilight.min.js</file>
+                    <file type="js">./scripts/jquery-ls-image-mapper.js</file>
+                    <file type="js">./scripts/theme.js</file>
                 </assessments>
 
                 <error>
