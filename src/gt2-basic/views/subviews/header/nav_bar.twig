@@ -22,49 +22,56 @@ For the survey navigator ("Next", "Back", etc.), see: navigation/navigator.twig
         <div class="container-fluid col-xl-8">
             {% if( aSurveyInfo.options.brandlogo == "on") %}
                 {% if( aSurveyInfo.options.hidelogowhensmall == "on") %}
-                <div class="navbar-brand logo-container d-none d-md-block">
+                    <div class="navbar-brand logo-container d-none d-md-block">
                 {% else %}
-                <div class="navbar-brand logo-container">
+                    <div class="navbar-brand logo-container">
                 {% endif %}
                 
                     {{ image(aSurveyInfo.options.brandlogofile, aSurveyInfo.name, {"class": "logo img-fluid"}) }}
                 </div>
             {% endif %}
             {% if( aSurveyInfo.options.showsurveyname == "on") %}
-            <div>{{ aSurveyInfo.name }}</div>
+                <div>{{ aSurveyInfo.name }}</div>
             {% endif %}
-            <div id="navbar-menu" class="dropdown ms-auto ls-no-js-hidden">
+            {% if aSurveyInfo.options.dotMenu == "never" %}
                 {%  if (aSurveyInfo.aQuestionIndex.bShow == true and aSurveyInfo.options.questionIndexOnTop == 'on') %}
-                    {{ include('./subviews/navigation/question_index_main.twig') }}
-                {%  endif %}
-
-                {% if( aSurveyInfo.aNavigator.load.show == "Y" or
-                    aSurveyInfo.aNavigator.save.show == "Y" or
-                    ((aSurveyInfo.bShowClearAll == true or aSurveyInfo.bShowClearAll == null) and
-                    aSurveyInfo.options.showclearall == 'on') or
-                    aSurveyInfo.aQuestionIndex.bShow == true or
-                    aSurveyInfo.alanguageChanger.show == true) %}
-                    <div id="navbar-toggler" class="navbar-toggler" data-bs-toggle="dropdown"
-                         data-bs-auto-close="outside" aria-expanded="false">
-                        <span class="ri-more-fill"></span>
+                    <div id="navbar-menu" class="dropdown ms-auto ls-no-js-hidden">
+                        {{ include('./subviews/navigation/question_index_main.twig') }}
                     </div>
-                    <ul id="main-dropdown" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbar-toggler">
-                        {{ include('./subviews/navigation/language_changer_top_menu.twig') }}
-                        {% if( aSurveyInfo.aNavigator.load.show == "Y" or
-                            aSurveyInfo.aNavigator.save.show == "Y" or
-                            ((aSurveyInfo.bShowClearAll == true or aSurveyInfo.bShowClearAll == null) and
-                            aSurveyInfo.options.showclearall == 'on') or
-                            (aSurveyInfo.aQuestionIndex.bShow == true and aSurveyInfo.options.questionIndexOnTop == 'off')) %}
-                            <li class="dropdown-header text-uppercase">{{ gT("Survey options") }}</li>
-                        {% endif %}
-                        {# include('./subviews/navigation/save_links.twig') #}
-                        {% if (aSurveyInfo.aQuestionIndex.bShow == true and aSurveyInfo.options.questionIndexOnTop == 'off') %}
-                            {{ include('./subviews/navigation/question_index_menu.twig') }}
-                        {% endif %}
-                        {{ include('./subviews/navigation/clearall_links.twig') }}
-                    </ul>
-                {% endif %}
-            </div>
+                {%  endif %}
+            {% else %}
+                <div id="navbar-menu" class="dropdown ms-auto ls-no-js-hidden">
+                    {%  if (aSurveyInfo.aQuestionIndex.bShow == true and aSurveyInfo.options.questionIndexOnTop == 'on') %}
+                        {{ include('./subviews/navigation/question_index_main.twig') }}
+                    {%  endif %}
+
+                    {% if( ((aSurveyInfo.bShowClearAll == true or aSurveyInfo.bShowClearAll == null) and
+                                aSurveyInfo.options.showclearall == 'on') or
+                        (aSurveyInfo.aQuestionIndex.bShow == true and aSurveyInfo.options.questionIndexOnTop == 'off') or
+                        aSurveyInfo.alanguageChanger.show == true or
+                        aSurveyInfo.options.dotMenu == "always") %}
+                        <div id="navbar-toggler" class="navbar-toggler" data-bs-toggle="dropdown"
+                             data-bs-auto-close="outside" aria-expanded="false">
+                            <span class="ri-more-fill"></span>
+                        </div>
+                        <ul id="main-dropdown" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbar-toggler">
+                            {{ include('./subviews/navigation/language_changer_top_menu.twig') }}
+                            {% if( aSurveyInfo.aNavigator.load.show == "Y" or
+                                aSurveyInfo.aNavigator.save.show == "Y" or
+                                ((aSurveyInfo.bShowClearAll == true or aSurveyInfo.bShowClearAll == null) and
+                                    aSurveyInfo.options.showclearall == 'on') or
+                                (aSurveyInfo.aQuestionIndex.bShow == true and aSurveyInfo.options.questionIndexOnTop == 'off')) %}
+                                <li class="dropdown-header text-uppercase">{{ gT("Survey options") }}</li>
+                            {% endif %}
+                            {# include('./subviews/navigation/save_links.twig') #}
+                            {% if (aSurveyInfo.aQuestionIndex.bShow == true and aSurveyInfo.options.questionIndexOnTop == 'off') %}
+                                {{ include('./subviews/navigation/question_index_menu.twig') }}
+                            {% endif %}
+                            {{ include('./subviews/navigation/clearall_links.twig') }}
+                        </ul>
+                    {% endif %}
+                </div>
+            {%  endif %}
             <ul id="back-content" class="d-none"></ul>
         </div>
     </div>

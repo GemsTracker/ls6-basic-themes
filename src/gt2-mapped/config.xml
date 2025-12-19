@@ -80,7 +80,7 @@
     <!-- for animations, see https://daneden.github.io/animate.css/ -->
     <!-- for checkbox icons, use the Unicode of the charcter (eg: http://fontawesome.io/icon/check/ is f00c ) -->
     <options>
-        <autoSave type="buttons" category="Simple options" width="4" title="Autosave" options="1minute|blur|none" optionlabels="Every minute|When switching windows|Never">none
+        <autoSave type="buttons" category="Simple options" width="4" title="Enable Autosave" options="1minute|blur|none" optionlabels="Every minute|When switching windows|Never">none
         </autoSave>
         <hideSaveContinue type="buttons" category="Simple options" width="4" title="Save &amp; Resume Button" options="on|off" optionlabels="Hide|Show">off
         </hideSaveContinue>
@@ -99,8 +99,12 @@
         </subQuestionAlign>
         <subQuestionsGrid type="buttons" category="Simple options" width="4" title="Show sub-question in grid" options="shade|lines|off" optionlabels="Odd|Lines|Off">off
         </subQuestionsGrid>
-        <questionIndexOnTop type="buttons" category="Simple options" width="9" title="Show question index on top" options="on|off" optionlabels="On|Off">off
+        <dotMenu type="buttons" category="Simple options" width="4" title="Show 3 dots menu" options="always|filled|never" optionlabels="Always|When filled|Never">always
+        </dotMenu>
+        <questionIndexOnTop type="buttons" category="Simple options" width="4" title="Show question index from 3 dots on top" options="on|off" optionlabels="On|Off">off
         </questionIndexOnTop>
+        <gemsTracker type="buttons" category="Simple options" width="4" title="GemsTracker Version" options="1|2" optionlabels="1.9|2.x">2
+        </gemsTracker>
 
         <hideprivacyinfo type="buttons" category="Simple options" width="4" title="Hide privacy info" options="on|off" optionlabels="Yes|No">off
         </hideprivacyinfo>

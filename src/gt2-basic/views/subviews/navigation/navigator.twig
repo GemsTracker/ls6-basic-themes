@@ -55,7 +55,7 @@ If you want to see what is availabe in aNavigator, turn debug mode on in applica
                     {{ gT('Save') }} &amp; {{ gT('Continue') }}
                 </a>
             {% endif %}
-             <a {{ aSurveyInfo.attr.navigatorbuttonsubmit }} onclick="GT_saveAjax(this, '{{ aSurveyInfo.surveyls_url }}?resumeLater=1');" class="{{ aSurveyInfo.class.navigatorbuttonsubmit }} save-resume btn btn-lg btn-outline-secondary">
+             <a {{ aSurveyInfo.attr.navigatorbuttonsubmit }} onclick="GT_saveAjax(this, '{{ aSurveyInfo.surveyls_url }}/resumeLater/1');" class="{{ aSurveyInfo.class.navigatorbuttonsubmit }} save-resume btn btn-lg btn-outline-secondary">
                  {{ gT('Save') }} &amp; {{ gT('Resume later') }}
             </a>
         </div>
