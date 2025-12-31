@@ -61,7 +61,7 @@
             <remove>awesome-bootstrap-checkbox/awesome-bootstrap-checkbox-rtl.css</remove>
         </css>
         <js>
-            <add>scripts/jquery-ui.min.js</add>
+            <add>scripts/jquery-ui.js</add>
             <add>scripts/jquery-radio-master.js</add>
             <add>scripts/jquery.maphilight.min.js</add>
             <add>scripts/jquery-ls-image-mapper.js</add>

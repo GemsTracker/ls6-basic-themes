@@ -140,7 +140,8 @@ jQuery.widget("ui.radioMaster", {
         val = master.getAttribute('value');
 
         this.skipCheck = true;
-        this.servants.filter('[value="' + val + '"]').click();
+        this.servants.filter('[value="' + val + '"]').click()
+        this.servants.filter('[value="' + val + '"]').change();
         this.skipCheck = false;
     },
 

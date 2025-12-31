@@ -246,6 +246,7 @@ $.widget("ui.lsImageMapper", {
             jQuery('#javatbd' + areaIds[i]).hover(rowHoverIn, rowHoverOut);
             jQuery('#javatbd' + areaIds[i] + ' td').click(cellClick);
             jQuery('#javatbd' + areaIds[i] + ' td input').click(inputClick);
+            jQuery('#javatbd' + areaIds[i] + ' td input').change(inputClick);
         }
 
         if (true === this.options.hideAnswers) {
@@ -259,7 +260,7 @@ $.widget("ui.lsImageMapper", {
         var newdata, value;
 
         value = this.getAreaValue(areaId);
-        //console.log(areaId, value);
+        console.log(areaId, value);
         
         if (this.options.answerDisplays[value]) {
             newdata = this.options.answerDisplays[value];

@@ -62,6 +62,8 @@
         <js>
             <!-- add>scripts/jquery-ui-1.12.1.min.js</add -->
             <add>scripts/theme.js</add>
+            <add>scripts/jquery-ui.js</add>
+            <add>scripts/jquery-radio-master.js</add>
             <replace>scripts/custom.js</replace>
             <remove>survey.js</remove>
             <remove>template-core.js</remove>
