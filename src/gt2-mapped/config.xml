@@ -53,8 +53,9 @@
         <css>
             <add>css/variations/theme_apple.css</add>
             <add>css/base.css</add>
-            <add>css/custom.css</add>
             <add>css/jquery-ui.css</add>
+            <add>css/gt2.css</add>
+            <add>css/custom.css</add>
             <remove>survey.css</remove>
             <remove>template-core.css</remove>
             <remove>awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css</remove>
@@ -101,9 +102,18 @@
         </subQuestionsGrid>
         <dotMenu type="buttons" category="Simple options" width="4" title="Show 3 dots menu" options="always|filled|never" optionlabels="Always|When filled|Never">always
         </dotMenu>
+        <groupsAsTabs type="buttons" category="Simple options" width="4" title="Show Groups as Tabs" options="on|off" optionlabels="On|Off">off</groupsAsTabs>
         <questionIndexOnTop type="buttons" category="Simple options" width="4" title="Show question index from 3 dots on top" options="on|off" optionlabels="On|Off">off
         </questionIndexOnTop>
-        <gemsTracker type="buttons" category="Simple options" width="4" title="GemsTracker Version" options="1|2" optionlabels="1.9|2.x">2
+
+        <showsurveyname type="buttons" category="Simple options" width="4" title="Show survey name in header" options="on|off" optionlabels="On|Off">on
+        </showsurveyname>
+        <showrequiredasterisk type="buttons" category="Simple options" width="4" title="Show required asterisk" options="on|off" optionlabels="On|Off">on
+        </showrequiredasterisk>
+        <hidelogowhensmall type="buttons" category="Simple options" width="4" title="Hide logo in small screens" options="on|off" optionlabels="On|Off">on
+        </hidelogowhensmall>
+
+        <gemsTracker type="buttons" category="Simple options" width="12" title="GemsTracker Version" options="1|2" optionlabels="1.9|2.x">2
         </gemsTracker>
 
         <hideprivacyinfo type="buttons" category="Simple options" width="4" title="Hide privacy info" options="on|off" optionlabels="Yes|No">off
@@ -116,6 +126,7 @@
         </questionhelptextposition>
         <fixnumauto type="buttons" category="Simple options" width="4" title="Fix automatically numeric value" options="enable|partial|disable" optionlabels="Yes|For expression|No">enable
         </fixnumauto>
+
         <!-- images -->
         <backgroundimage type="buttons" category="Images" width="4" title="Background image" options="on|off" optionlabels="Yes|No">off
         </backgroundimage>
@@ -157,7 +168,7 @@
                 </optgroup>
             </dropdownoptions>
         </font>
-        <cssframework type="dropdown" category="Simple options" width="12" title="Variations" parent="cssframework">Apple
+        <cssframework type="dropdown" category="Simple options" width="12" title="Variations" parent="cssframework">none
             <dropdownoptions>
                 <optgroup>
                     <option data-value="css/variations/theme_apple.css" value="apple">Apple</option>
@@ -218,6 +229,7 @@
                     <file type="view" role="subview">./subviews/survey/question_subviews/answers.twig</file>
                     <file type="view" role="subview">./subviews/survey/question_subviews/survey_question_help.twig</file>
                     <file type="view" role="subview">./subviews/survey/question_subviews/valid_message_and_help.twig</file>
+                    <file type="css">./css/gt2.css</file>
                     <file type="css">./css/variations/theme_apple.css</file>
                     <file type="css">./css/variations/theme_apple-rtl.css</file>
                     <file type="css">./css/variations/theme_blueberry.css</file>
