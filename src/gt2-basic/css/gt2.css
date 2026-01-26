@@ -1,3 +1,11 @@
+:root {
+    --base-font-size: 16px;
+}
+
+html {
+    font-size: var(--base-font-size);
+}
+
 body.brand-logo #dynamicReloadContainer .top-container .top-content {
     margin-bottom: 0;
     margin-top: 0;
