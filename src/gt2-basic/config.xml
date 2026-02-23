@@ -115,6 +115,8 @@
         <gemsTracker type="buttons" category="Simple options" width="12" title="GemsTracker Version" options="1|2" optionlabels="1.9|2.x">2
         </gemsTracker>
 
+        <baseFontSize type="buttons" category="Simple options" width="4" title="Base font size" options="default|12px|14px|16px|18px|20px" optionlabels="Theme default|12px|14px|16px|18px|20px">default</baseFontSize>
+
         <hideprivacyinfo type="buttons" category="Simple options" width="4" title="Hide privacy info" options="on|off" optionlabels="Yes|No">off
         </hideprivacyinfo>
         <showpopups type="buttons" category="Simple options" width="4" title="Show popups" options="1|0|-1" optionlabels="Popup|On page|No">1
