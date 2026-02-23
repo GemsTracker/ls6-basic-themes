@@ -112,10 +112,10 @@
         <hidelogowhensmall type="buttons" category="Simple options" width="4" title="Hide logo in small screens" options="on|off" optionlabels="On|Off">on
         </hidelogowhensmall>
 
-        <gemsTracker type="buttons" category="Simple options" width="12" title="GemsTracker Version" options="1|2" optionlabels="1.9|2.x">2
-        </gemsTracker>
-
         <baseFontSize type="buttons" category="Simple options" width="4" title="Base font size" options="default|12px|14px|16px|18px|20px" optionlabels="Theme default|12px|14px|16px|18px|20px">default</baseFontSize>
+
+        <gemsTracker type="buttons" category="Simple options" width="8" title="GemsTracker Version" options="1|2" optionlabels="1.9|2.x">2
+        </gemsTracker>
 
         <hideprivacyinfo type="buttons" category="Simple options" width="4" title="Hide privacy info" options="on|off" optionlabels="Yes|No">off
         </hideprivacyinfo>
