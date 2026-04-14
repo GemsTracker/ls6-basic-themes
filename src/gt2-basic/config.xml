@@ -22,7 +22,7 @@
         <version>1.0.0</version>
         <apiVersion>3.0</apiVersion>
         <description twig="on"><![CDATA[<strong>{{gT("GemsTracker Basic Theme")}}</strong><br>{{gT("A general theme for flexible use with GemsTracker. This theme offers many options for easy customizations.")}}]]></description>
-        <lastUpdate>2025-04-14 20:47:56</lastUpdate>
+        <lastUpdate>2026-03-20 17:03:59</lastUpdate>
         <extends>fruity_twentythree</extends>
     </metadata>
 
@@ -51,11 +51,12 @@
     -->
     <files>
         <css>
-            <add>css/variations/theme_apple.css</add>
             <add>css/base.css</add>
             <add>css/gt2.css</add>
             <add>css/custom.css</add>
             <remove>survey.css</remove>
+            <remove>/theme_apple.css</remove>
+            <remove>css/variations/theme_apple.css</remove>
             <remove>template-core.css</remove>
             <remove>awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css</remove>
             <remove>awesome-bootstrap-checkbox/awesome-bootstrap-checkbox-rtl.css</remove>
@@ -243,6 +244,7 @@
                     <file type="js">./scripts/theme.js</file>
                     <file type="css">./css/custom.css</file>
                     <file type="js">./scripts/custom.js</file>
+                    <file type="js">./scripts/jquery-radio-master.js</file>
                 </question>
 
                 <surveylist>
