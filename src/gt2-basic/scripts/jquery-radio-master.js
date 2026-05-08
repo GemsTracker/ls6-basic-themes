@@ -1,4 +1,3 @@
-
 /**
 <script type="text/javascript" charset="utf-8">
 //<![CDATA[
@@ -15,7 +14,7 @@ $(document).ready(function () {
 jQuery.widget("ui.radioMaster", {
     // default options
     options: {
-        masters: 'thead th',
+        masters: 'thead .ls-header th',
         mastersCreate: '<input type="radio" />',
         mastersName: null,
         mastersPrepend: false,
@@ -29,6 +28,7 @@ jQuery.widget("ui.radioMaster", {
         var allServants, count, i, thisMaster;
 
         var current = this.element;
+        var parents = 0;
         while (current && !this.options.mastersName) {
             if (current.attr('name')) {
                 this.options.mastersName = current.attr('name') + '_masters';
@@ -42,22 +42,22 @@ jQuery.widget("ui.radioMaster", {
         thisMaster   = this;
         this.masters = jQuery(this.options.masters, this.element);
 
+        // Servants may be parent elements of radio buttons
+        allServants = jQuery(this.options.servants, this.element);
+        this.servants = allServants.find(':radio');
+
         if (this.masters.not(':radio').length && this.options.mastersCreate) {
-            this.masters.map(function () {
-                thisMaster.addMaster(this);
+            this.masters.map(function (i) {
+                thisMaster.addMaster(this, i);
             });
         }
         // Clean up so only input masters remain
         this.masters = this.masters.parent().find(':radio');
 
-        // Servants may be parent elements of radio buttons
-        allServants = jQuery(this.options.servants, this.element);
-        this.servants = allServants.find(':radio');
-
         // Synchronize radio button values
         //
         // It is assumed that the first masters.length servants
-        // contain the values of the masters
+        // contains the values of the masters
         count = Math.min(this.masters.length, this.servants.length);
         for (i = 0; i < count; i = i + 1) {
             this.masters.eq(i).attr('value', this.servants.eq(i).attr('value'));
@@ -78,18 +78,23 @@ jQuery.widget("ui.radioMaster", {
         this.mastersCheck();
     },
 
-    addMaster: function (to) {
+    addMaster: function (to, i) {
         "use strict";
 
-        var $master;
+        var index, $master;
 
+        index = this.getIndex(this.servants.get(i));
         $master = jQuery(this.options.mastersCreate);
-        $master.attr('name', this.options.mastersName);
+        if (index !== null) {
+            console.log(index);
+            $master.attr('name', this.options.mastersName + "_" + index);
+        } else {
+            $master.attr('name', this.options.mastersName);
+        }
         if (null !== this.options.mastersTextColor) {
             jQuery(to).css('color', this.options.mastersTextColor);
         }
 
-        // console.log(to, this.options.mastersCreate, $master);
         if (this.options.mastersPrepend) {
             $master.prependTo(to);
         } else {
@@ -98,50 +103,77 @@ jQuery.widget("ui.radioMaster", {
 
         return this;
     },
+    
+    getIndex: function (elem) {
+        // console.log(elem);
+        var val = elem.value;
+        var id = elem.id;
+        
+        if (! id) {
+             id = elem.parentElement.id;
+        }
+        
+        var match = id.match(".+_(\\d)-" + val + "$");
+        
+        // console.log(id, ".+_(\\d)-" + val + "$", match);
+        if (match && match[1]) {
+            return match[1];
+        }
+        
+        return null;
+    },
 
     mastersCheck: function () {
         "use strict";
 
-        var $checked, val;
+        var $checked, $this, val;
 
         if (this.skipCheck) {
             return;
         }
 
-        // console.log('check master');
-        
-        $checked = this.servants.filter(':checked');
-        if (0 === $checked.length) {
+        $this = this;
+        this.masters.each(function (i) {
+            var index, master, servants, val;
+    
+            master   = $this.masters.get(i);
+            index    = $this.getIndex(master);
+            val      = master.getAttribute('value');
+            servants = $this.servants.filter('[value=' + val + ']');
+            
+            if (null !== index) {
+                servants = servants.filter(function (i) {
+                    return $this.getIndex(servants.get(i)) == index; 
+                })    
+                // console.log(index, val, servants.length, servants.filter(':checked').length);
+            }
+            
             // console.log('nothing selected');
-            this.masters.prop('checked', false);
-            return;
-        }
-        val = $checked.attr('value');
-        if ($checked.filter('[value!="' + val + '"]').length) {
-            // console.log('other value', this.masters);
-            this.masters.prop('checked', false);
-            return;
-        }
-        if ($checked.length !== this.servants.filter('[value="' + val + '"]').length) {
-            // console.log('value unselected');
-            this.masters.prop('checked', false);
-            return;
-        }
-
-        // console.log('master selected');
-        this.masters.filter('[value="' + val + '"]').prop('checked', true);
+            master.checked = (servants.length == servants.filter(':checked').length);
+            // console.log(index, val, i);
+        });
     },
 
     masterOn: function (master) {
         "use strict";
 
-        var val;
+        var index, servants, val, $this;
 
-        val = master.getAttribute('value');
+        index = this.getIndex(master);
+        val    = master.getAttribute('value');
 
         this.skipCheck = true;
-        this.servants.filter('[value="' + val + '"]').click()
-        this.servants.filter('[value="' + val + '"]').change();
+        servants = this.servants.filter('[value="' + val + '"]');
+        if (null !== index) {
+            $this = this;
+            servants = servants.filter(function (i) {
+                return $this.getIndex(servants.get(i)) == index; 
+            })    
+            // console.log(servants);
+        }
+        
+        servants.click()
+        servants.change();
         this.skipCheck = false;
     },
 
