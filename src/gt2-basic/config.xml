@@ -51,7 +51,9 @@
     -->
     <files>
         <css>
+            <add>css/variations/theme_apple.css</add>
             <add>css/base.css</add>
+            <add>css/jquery-ui.css</add>
             <add>css/gt2.css</add>
             <add>css/custom.css</add>
             <remove>survey.css</remove>
